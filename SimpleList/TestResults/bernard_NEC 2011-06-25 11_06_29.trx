@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="cd5743ff-5b8a-402f-bb95-403a596c26f7" name="bernard@NEC 2011-06-25 11:06:29" runUser="nec\bernard" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="c60156b2-9d72-4782-abb7-15b3962b81d9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="bernard_NEC 2011-06-25 11_06_29">
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\bin\Debug\Infostructure.SimpleList.BusinessLogic.dll" />
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess\bin\Debug\Infostructure.SimpleList.DataAccess.dll" />
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\bin\Debug\Infostructure.SimpleList.Utilities.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-25T11:06:29.9486585+12:00" queuing="2011-06-25T11:06:33.0773645+12:00" start="2011-06-25T11:06:33.2257925+12:00" finish="2011-06-25T11:07:52.6337960+12:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetUserByUserNameAndPasswordTest" storage="d:\webapps\simplelist\infostructure.simplelist.dataaccess.tests\bin\debug\infostructure.simplelist.dataaccess.tests.dll" id="b7350004-cf72-eac4-7eca-d4355f26d33b">
+      <Execution id="9ad0907a-6045-42cc-b8da-d3c353b000e1" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.DataAccess.Tests/bin/Debug/Infostructure.SimpleList.DataAccess.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.DataAccess.Tests.UserRepositoryTest, Infostructure.SimpleList.DataAccess.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetUserByUserNameAndPasswordTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="b7350004-cf72-eac4-7eca-d4355f26d33b" executionId="9ad0907a-6045-42cc-b8da-d3c353b000e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9ad0907a-6045-42cc-b8da-d3c353b000e1" testId="b7350004-cf72-eac4-7eca-d4355f26d33b" testName="GetUserByUserNameAndPasswordTest" computerName="NEC" duration="00:01:16.9578393" startTime="2011-06-25T11:06:33.3644555+12:00" endTime="2011-06-25T11:07:50.9532395+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9ad0907a-6045-42cc-b8da-d3c353b000e1">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;Infostructure.SimpleList.DataAccess.User (Infostructure.SimpleList.DataAccess.User)&gt;. Actual:&lt;System.Data.Entity.DynamicProxies.User_49CEAE5F65C56310CE24530630F3E5F856A917B5A6E7B5FAA9AA52CF77CBFFEA (System.Data.Entity.DynamicProxies.User_49CEAE5F65C56310CE24530630F3E5F856A917B5A6E7B5FAA9AA52CF77CBFFEA)&gt;. </Message>
+          <StackTrace>   at Infostructure.SimpleList.DataAccess.Tests.UserRepositoryTest.GetUserByUserNameAndPasswordTest() in D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\UserRepositoryTest.cs:line 86
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

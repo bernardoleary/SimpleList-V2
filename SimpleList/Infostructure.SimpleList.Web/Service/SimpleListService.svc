@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Infostructure.SimpleList.Web.Service.SimpleListService" CodeBehind="SimpleListService.svc.cs" %>

@@ -1,0 +1,10 @@
+d:\webapps\SimpleList\Infostructure.SimpleList.Utilities\bin\Debug\Infostructure.SimpleList.Utilities.dll
+d:\webapps\SimpleList\Infostructure.SimpleList.Utilities\bin\Debug\Infostructure.SimpleList.Utilities.pdb
+d:\webapps\SimpleList\Infostructure.SimpleList.Utilities\obj\Debug\ResolveAssemblyReference.cache
+d:\webapps\SimpleList\Infostructure.SimpleList.Utilities\obj\Debug\Infostructure.SimpleList.Utilities.dll
+d:\webapps\SimpleList\Infostructure.SimpleList.Utilities\obj\Debug\Infostructure.SimpleList.Utilities.pdb
+D:\WebApps\SimpleList.Bung\Infostructure.SimpleList.Utilities\bin\Debug\Infostructure.SimpleList.Utilities.dll
+D:\WebApps\SimpleList.Bung\Infostructure.SimpleList.Utilities\bin\Debug\Infostructure.SimpleList.Utilities.pdb
+D:\WebApps\SimpleList.Bung\Infostructure.SimpleList.Utilities\obj\Debug\ResolveAssemblyReference.cache
+D:\WebApps\SimpleList.Bung\Infostructure.SimpleList.Utilities\obj\Debug\Infostructure.SimpleList.Utilities.dll
+D:\WebApps\SimpleList.Bung\Infostructure.SimpleList.Utilities\obj\Debug\Infostructure.SimpleList.Utilities.pdb

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="59c5cd7e-9c39-411e-8386-9a79f13f6827" name="bernard@NEC 2011-06-25 11:20:00" runUser="nec\bernard" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="c60156b2-9d72-4782-abb7-15b3962b81d9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="bernard_NEC 2011-06-25 11_20_00">
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.Web\bin\Infostructure.SimpleList.Web.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-25T11:20:00.6955955+12:00" queuing="2011-06-25T11:20:02.1339800+12:00" start="2011-06-25T11:20:02.2853375+12:00" finish="2011-06-25T11:21:23.5330670+12:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Register_Post_ReturnsRedirectOnSuccess" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="de902ee7-27b7-68b1-05ea-9025e90f8025">
+      <Execution id="f7f3be6e-5d64-411c-a4b4-c8b90b9d29c3" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Post_ReturnsRedirectOnSuccess" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="de902ee7-27b7-68b1-05ea-9025e90f8025" executionId="f7f3be6e-5d64-411c-a4b4-c8b90b9d29c3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="f7f3be6e-5d64-411c-a4b4-c8b90b9d29c3" testId="de902ee7-27b7-68b1-05ea-9025e90f8025" testName="Register_Post_ReturnsRedirectOnSuccess" computerName="NEC" duration="00:01:19.9702180" startTime="2011-06-25T11:20:02.4220475+12:00" endTime="2011-06-25T11:21:23.4119810+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f7f3be6e-5d64-411c-a4b4-c8b90b9d29c3">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest.Register_Post_ReturnsRedirectOnSuccess threw exception: 
+System.ArgumentException: The specified named connection is either not found in the configuration, not intended to be used with the EntityClient provider, or not valid.</Message>
+          <StackTrace>    at System.Data.EntityClient.EntityConnection.ChangeConnectionString(String newConnectionString)
+   at System.Data.EntityClient.EntityConnection..ctor(String connectionString)
+   at System.Data.Objects.ObjectContext.CreateEntityConnection(String connectionString)
+   at System.Data.Objects.ObjectContext..ctor(String connectionString, String defaultContainerName)
+   at Infostructure.SimpleList.DataAccess.SimpleListEntities..ctor() in D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess\SimpleListModel.Context.cs:line 23
+   at Infostructure.SimpleList.BusinessLogic.Repositories.UserRepository..ctor() in D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\Repositories\UserRepository.cs:line 12
+   at Infostructure.SimpleList.Web.Controllers.AccountController.Register(RegisterModel model) in D:\WebApps\SimpleList\Infostructure.SimpleList.Web\Controllers\AccountController.cs:line 103
+   at Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest.Register_Post_ReturnsRedirectOnSuccess() in D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\Controllers\AccountControllerTest.cs:line 260
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

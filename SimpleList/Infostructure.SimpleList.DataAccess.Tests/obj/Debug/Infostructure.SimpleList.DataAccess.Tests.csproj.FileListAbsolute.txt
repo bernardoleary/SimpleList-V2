@@ -1,0 +1,12 @@
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\bin\Debug\Infostructure.SimpleList.DataAccess.Tests.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\bin\Debug\Infostructure.SimpleList.DataAccess.Tests.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\bin\Debug\Infostructure.SimpleList.BusinessLogic.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\bin\Debug\Infostructure.SimpleList.DataAccess.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\bin\Debug\Infostructure.SimpleList.Utilities.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\bin\Debug\Infostructure.SimpleList.BusinessLogic.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\bin\Debug\Infostructure.SimpleList.DataAccess.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\bin\Debug\Infostructure.SimpleList.Utilities.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\obj\Debug\ResolveAssemblyReference.cache
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\obj\Debug\Infostructure.SimpleList.DataAccess.Tests.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\obj\Debug\Infostructure.SimpleList.DataAccess.Tests.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\bin\Debug\Infostructure.SimpleList.DataAccess.Tests.dll.config

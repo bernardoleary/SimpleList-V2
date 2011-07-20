@@ -1,0 +1,14 @@
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\bin\Debug\Infostructure.SimpleList.Web.Tests.dll.config
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\bin\Debug\Infostructure.SimpleList.Web.Tests.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\bin\Debug\Infostructure.SimpleList.Web.Tests.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\bin\Debug\Infostructure.SimpleList.Web.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\bin\Debug\Infostructure.SimpleList.Web.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\obj\Debug\ResolveAssemblyReference.cache
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\obj\Debug\Infostructure.SimpleList.Web.Tests.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\obj\Debug\Infostructure.SimpleList.Web.Tests.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\bin\Debug\Infostructure.SimpleList.BusinessLogic.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\bin\Debug\Infostructure.SimpleList.DataModel.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\bin\Debug\Infostructure.SimpleList.Utilities.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\bin\Debug\Infostructure.SimpleList.BusinessLogic.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\bin\Debug\Infostructure.SimpleList.DataModel.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.Web.Tests\bin\Debug\Infostructure.SimpleList.Utilities.pdb

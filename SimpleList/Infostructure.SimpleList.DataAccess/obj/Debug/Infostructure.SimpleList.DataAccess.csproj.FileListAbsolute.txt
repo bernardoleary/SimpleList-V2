@@ -1,0 +1,6 @@
+d:\webapps\SimpleList\Infostructure.SimpleList.DataAccess\bin\Debug\Infostructure.SimpleList.DataAccess.dll.config
+d:\webapps\SimpleList\Infostructure.SimpleList.DataAccess\bin\Debug\Infostructure.SimpleList.DataAccess.dll
+d:\webapps\SimpleList\Infostructure.SimpleList.DataAccess\bin\Debug\Infostructure.SimpleList.DataAccess.pdb
+d:\webapps\SimpleList\Infostructure.SimpleList.DataAccess\obj\Debug\ResolveAssemblyReference.cache
+d:\webapps\SimpleList\Infostructure.SimpleList.DataAccess\obj\Debug\Infostructure.SimpleList.DataAccess.dll
+d:\webapps\SimpleList\Infostructure.SimpleList.DataAccess\obj\Debug\Infostructure.SimpleList.DataAccess.pdb

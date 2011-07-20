@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="92c2e0d7-f863-4f9b-a91f-916ed3cc1024" name="bernard@NEC 2011-06-25 11:57:11" runUser="nec\bernard" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="c60156b2-9d72-4782-abb7-15b3962b81d9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="bernard_NEC 2011-06-25 11_57_11">
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.Web\bin\Infostructure.SimpleList.Web.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-25T11:57:11.9609885+12:00" queuing="2011-06-25T11:57:14.6629640+12:00" start="2011-06-25T11:57:14.8113920+12:00" finish="2011-06-25T11:58:28.6572515+12:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="NEC" outcome="Error" timestamp="2011-06-25T11:58:28.6562750+12:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Register_Post_ReturnsRedirectOnSuccess" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="de902ee7-27b7-68b1-05ea-9025e90f8025">
+      <Execution id="57375cfc-bfd8-4cac-a475-3203a2dc7aef" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Post_ReturnsRedirectOnSuccess" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="de902ee7-27b7-68b1-05ea-9025e90f8025" executionId="57375cfc-bfd8-4cac-a475-3203a2dc7aef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="57375cfc-bfd8-4cac-a475-3203a2dc7aef" testId="de902ee7-27b7-68b1-05ea-9025e90f8025" testName="Register_Post_ReturnsRedirectOnSuccess" computerName="NEC" duration="00:01:13.7071965" startTime="2011-06-25T11:57:14.9500550+12:00" endTime="2011-06-25T11:58:28.6572515+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="57375cfc-bfd8-4cac-a475-3203a2dc7aef">
+    </UnitTestResult>
+  </Results>
+</TestRun>

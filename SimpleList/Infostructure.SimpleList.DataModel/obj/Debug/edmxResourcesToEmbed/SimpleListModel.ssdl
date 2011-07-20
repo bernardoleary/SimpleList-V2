@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Infostructure.SimpleList.DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="InfostructureSimpleListDataModelStoreContainer">
+    <EntitySet Name="SimpleList" EntityType="Infostructure.SimpleList.DataModel.Store.SimpleList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SimpleListItem" EntityType="Infostructure.SimpleList.DataModel.Store.SimpleListItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="Infostructure.SimpleList.DataModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_List_User" Association="Infostructure.SimpleList.DataModel.Store.FK_List_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="SimpleList" EntitySet="SimpleList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListItem_List" Association="Infostructure.SimpleList.DataModel.Store.FK_ListItem_List">
+      <End Role="SimpleList" EntitySet="SimpleList" />
+      <End Role="SimpleListItem" EntitySet="SimpleListItem" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SimpleList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="AllDone" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SimpleListItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SimpleListID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="700" />
+    <Property Name="Done" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <Association Name="FK_List_User">
+    <End Role="User" Type="Infostructure.SimpleList.DataModel.Store.User" Multiplicity="0..1" />
+    <End Role="SimpleList" Type="Infostructure.SimpleList.DataModel.Store.SimpleList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SimpleList">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListItem_List">
+    <End Role="SimpleList" Type="Infostructure.SimpleList.DataModel.Store.SimpleList" Multiplicity="1" />
+    <End Role="SimpleListItem" Type="Infostructure.SimpleList.DataModel.Store.SimpleListItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SimpleList">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SimpleListItem">
+        <PropertyRef Name="SimpleListID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

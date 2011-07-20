@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InfostructureSimpleListDataAccessModelStoreContainer" CdmEntityContainer="SimpleListEntities">
+    <EntitySetMapping Name="SimpleLists">
+      <EntityTypeMapping TypeName="Infostructure.SimpleList.DataAccess.Model.SimpleList">
+        <MappingFragment StoreEntitySet="SimpleList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="AllDone" ColumnName="AllDone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SimpleListItems">
+      <EntityTypeMapping TypeName="Infostructure.SimpleList.DataAccess.Model.SimpleListItem">
+        <MappingFragment StoreEntitySet="SimpleListItem">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SimpleListID" ColumnName="SimpleListID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Done" ColumnName="Done" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Infostructure.SimpleList.DataAccess.Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

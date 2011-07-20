@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="fa67e2ec-6751-47c8-82a9-f5eca6472423" name="bernard@NEC 2011-06-25 11:40:35" runUser="nec\bernard" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="c60156b2-9d72-4782-abb7-15b3962b81d9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="bernard_NEC 2011-06-25 11_40_35">
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\bin\Debug\Infostructure.SimpleList.BusinessLogic.dll" />
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess\bin\Debug\Infostructure.SimpleList.DataAccess.dll" />
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\bin\Debug\Infostructure.SimpleList.Utilities.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-25T11:40:35.3040755+12:00" queuing="2011-06-25T11:40:36.6330920+12:00" start="2011-06-25T11:40:36.7746845+12:00" finish="2011-06-25T11:40:41.3984120+12:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetUserByUserNameAndPasswordTest" storage="d:\webapps\simplelist\infostructure.simplelist.businesslogic.tests\bin\debug\infostructure.simplelist.businesslogic.tests.dll" id="ce9f0019-0232-073d-f38c-8ff2eb1791ba">
+      <Execution id="4728b870-188e-4a2f-8e29-a6146800b1e2" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.BusinessLogic.Tests/bin/Debug/Infostructure.SimpleList.BusinessLogic.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.BusinessLogic.Tests.UserRepositoryTest, Infostructure.SimpleList.BusinessLogic.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetUserByUserNameAndPasswordTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="ce9f0019-0232-073d-f38c-8ff2eb1791ba" executionId="4728b870-188e-4a2f-8e29-a6146800b1e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="4728b870-188e-4a2f-8e29-a6146800b1e2" testId="ce9f0019-0232-073d-f38c-8ff2eb1791ba" testName="GetUserByUserNameAndPasswordTest" computerName="NEC" duration="00:00:02.2847062" startTime="2011-06-25T11:40:36.9133475+12:00" endTime="2011-06-25T11:40:39.7998815+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4728b870-188e-4a2f-8e29-a6146800b1e2">
+    </UnitTestResult>
+  </Results>
+</TestRun>

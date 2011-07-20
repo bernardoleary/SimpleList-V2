@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Infostructure.SimpleList.DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="InfostructureSimpleListDataModelStoreContainer">
+          <EntitySet Name="SimpleList" EntityType="Infostructure.SimpleList.DataModel.Store.SimpleList" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SimpleListItem" EntityType="Infostructure.SimpleList.DataModel.Store.SimpleListItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="Infostructure.SimpleList.DataModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_List_User" Association="Infostructure.SimpleList.DataModel.Store.FK_List_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SimpleList" EntitySet="SimpleList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListItem_List" Association="Infostructure.SimpleList.DataModel.Store.FK_ListItem_List">
+            <End Role="SimpleList" EntitySet="SimpleList" />
+            <End Role="SimpleListItem" EntitySet="SimpleListItem" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="SimpleList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="DateAdded" Type="datetime" Nullable="false" />
+          <Property Name="AllDone" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SimpleListItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SimpleListID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="700" />
+          <Property Name="Done" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK_List_User">
+          <End Role="User" Type="Infostructure.SimpleList.DataModel.Store.User" Multiplicity="0..1" />
+          <End Role="SimpleList" Type="Infostructure.SimpleList.DataModel.Store.SimpleList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleList">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListItem_List">
+          <End Role="SimpleList" Type="Infostructure.SimpleList.DataModel.Store.SimpleList" Multiplicity="1" />
+          <End Role="SimpleListItem" Type="Infostructure.SimpleList.DataModel.Store.SimpleListItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SimpleList">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleListItem">
+              <PropertyRef Name="SimpleListID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Infostructure.SimpleList.DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SimpleListEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SimpleLists" EntityType="Infostructure.SimpleList.DataModel.SimpleList" />
+          <EntitySet Name="SimpleListItems" EntityType="Infostructure.SimpleList.DataModel.SimpleListItem" />
+          <EntitySet Name="Users" EntityType="Infostructure.SimpleList.DataModel.User" />
+          <AssociationSet Name="FK_List_User" Association="Infostructure.SimpleList.DataModel.FK_List_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="SimpleList" EntitySet="SimpleLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListItem_List" Association="Infostructure.SimpleList.DataModel.FK_ListItem_List">
+            <End Role="SimpleList" EntitySet="SimpleLists" />
+            <End Role="SimpleListItem" EntitySet="SimpleListItems" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="SimpleList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DateAdded" Type="DateTime" Nullable="false" />
+          <Property Name="AllDone" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Infostructure.SimpleList.DataModel.FK_List_User" FromRole="SimpleList" ToRole="User" />
+          <NavigationProperty Name="SimpleListItems" Relationship="Infostructure.SimpleList.DataModel.FK_ListItem_List" FromRole="SimpleList" ToRole="SimpleListItem" />
+        </EntityType>
+        <EntityType Name="SimpleListItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SimpleListID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="700" Unicode="false" FixedLength="false" />
+          <Property Name="Done" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="SimpleList" Relationship="Infostructure.SimpleList.DataModel.FK_ListItem_List" FromRole="SimpleListItem" ToRole="SimpleList" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SimpleLists" Relationship="Infostructure.SimpleList.DataModel.FK_List_User" FromRole="User" ToRole="SimpleList" />
+        </EntityType>
+        <Association Name="FK_List_User">
+          <End Role="User" Type="Infostructure.SimpleList.DataModel.User" Multiplicity="0..1" />
+          <End Role="SimpleList" Type="Infostructure.SimpleList.DataModel.SimpleList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleList">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListItem_List">
+          <End Role="SimpleList" Type="Infostructure.SimpleList.DataModel.SimpleList" Multiplicity="1" />
+          <End Role="SimpleListItem" Type="Infostructure.SimpleList.DataModel.SimpleListItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SimpleList">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleListItem">
+              <PropertyRef Name="SimpleListID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InfostructureSimpleListDataModelStoreContainer" CdmEntityContainer="SimpleListEntities">
+          <EntitySetMapping Name="SimpleLists"><EntityTypeMapping TypeName="Infostructure.SimpleList.DataModel.SimpleList"><MappingFragment StoreEntitySet="SimpleList">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+            <ScalarProperty Name="AllDone" ColumnName="AllDone" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SimpleListItems"><EntityTypeMapping TypeName="Infostructure.SimpleList.DataModel.SimpleListItem"><MappingFragment StoreEntitySet="SimpleListItem">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="SimpleListID" ColumnName="SimpleListID" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Done" ColumnName="Done" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="Infostructure.SimpleList.DataModel.User"><MappingFragment StoreEntitySet="User">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SimpleListModel">
+        <EntityTypeShape EntityType="Infostructure.SimpleList.DataModel.SimpleList" Width="1.5" PointX="3" PointY="0.875" Height="2.0853483072916665" IsExpanded="true" />
+        <EntityTypeShape EntityType="Infostructure.SimpleList.DataModel.SimpleListItem" Width="1.5" PointX="5.25" PointY="1.125" Height="1.7566536458333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Infostructure.SimpleList.DataModel.User" Width="1.5" PointX="0.75" PointY="1.125" Height="1.7566536458333335" IsExpanded="true" />
+        <AssociationConnector Association="Infostructure.SimpleList.DataModel.FK_List_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.0033268229166667" />
+          <ConnectorPoint PointX="3" PointY="2.0033268229166667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Infostructure.SimpleList.DataModel.FK_ListItem_List" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.0033268229166667" />
+          <ConnectorPoint PointX="5.25" PointY="2.0033268229166667" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

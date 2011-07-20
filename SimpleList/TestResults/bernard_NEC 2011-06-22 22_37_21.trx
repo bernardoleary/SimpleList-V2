@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="258b5bf9-a600-4b15-963b-6c6c21533119" name="bernard@NEC 2011-06-22 22:37:21" runUser="nec\bernard" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="c60156b2-9d72-4782-abb7-15b3962b81d9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="bernard_NEC 2011-06-22 22_37_21">
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\bin\Debug\Infostructure.SimpleList.BusinessLogic.dll" />
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess\bin\Debug\Infostructure.SimpleList.DataAccess.dll" />
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\bin\Debug\Infostructure.SimpleList.Utilities.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-22T22:37:21.1196605+12:00" queuing="2011-06-22T22:37:22.6303060+12:00" start="2011-06-22T22:37:22.7738515+12:00" finish="2011-06-22T22:37:30.1444735+12:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetUserByUserNameAndPasswordTest" storage="d:\webapps\simplelist\infostructure.simplelist.dataaccess.tests\bin\debug\infostructure.simplelist.dataaccess.tests.dll" id="b7350004-cf72-eac4-7eca-d4355f26d33b">
+      <Execution id="fb2d6cbe-6615-4d5d-a218-ff67678a9ba6" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.DataAccess.Tests/bin/Debug/Infostructure.SimpleList.DataAccess.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.DataAccess.Tests.UserRepositoryTest, Infostructure.SimpleList.DataAccess.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetUserByUserNameAndPasswordTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="b7350004-cf72-eac4-7eca-d4355f26d33b" executionId="fb2d6cbe-6615-4d5d-a218-ff67678a9ba6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="fb2d6cbe-6615-4d5d-a218-ff67678a9ba6" testId="b7350004-cf72-eac4-7eca-d4355f26d33b" testName="GetUserByUserNameAndPasswordTest" computerName="NEC" duration="00:00:06.5498229" startTime="2011-06-22T22:37:22.9271620+12:00" endTime="2011-06-22T22:37:30.0458470+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fb2d6cbe-6615-4d5d-a218-ff67678a9ba6">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Infostructure.SimpleList.DataAccess.Tests.UserRepositoryTest.GetUserByUserNameAndPasswordTest threw exception: 
+System.Data.MetadataException: Unable to load the specified metadata resource.</Message>
+          <StackTrace>    at System.Data.Metadata.Edm.MetadataArtifactLoaderResource.LoadResource()
+   at System.Data.Metadata.Edm.MetadataArtifactLoaderResource.CreateReader()
+   at System.Data.Metadata.Edm.MetadataArtifactLoaderResource.CreateReaders(DataSpace spaceToGet)
+   at System.Data.Metadata.Edm.MetadataArtifactLoaderComposite.CreateReaders(DataSpace spaceToGet)
+   at System.Data.Metadata.Edm.MetadataCache.EdmMetadataEntry.LoadEdmItemCollection(MetadataArtifactLoader loader)
+   at System.Data.Metadata.Edm.MetadataCache.EdmItemCollectionLoader.LoadItemCollection(EdmMetadataEntry entry)
+   at System.Data.Metadata.Edm.MetadataCache.LoadItemCollection[T](IItemCollectionLoader`1 itemCollectionLoader, T entry)
+   at System.Data.Metadata.Edm.MetadataCache.GetOrCreateEdmItemCollection(String cacheKey, MetadataArtifactLoader loader, Object&amp; entryToken)
+   at System.Data.EntityClient.EntityConnection.LoadEdmItemCollection(MetadataWorkspace workspace, MetadataArtifactLoader artifactLoader)
+   at System.Data.EntityClient.EntityConnection.GetMetadataWorkspace(Boolean initializeAllCollections)
+   at System.Data.Objects.ObjectContext.RetrieveMetadataWorkspaceFromConnection()
+   at System.Data.Objects.ObjectContext..ctor(EntityConnection connection, Boolean isConnectionConstructor)
+   at System.Data.Objects.ObjectContext..ctor(String connectionString, String defaultContainerName)
+   at Infostructure.SimpleList.DataAccess.SimpleListEntities..ctor() in D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess\DataAccessEntities.cs:line 12
+   at Infostructure.SimpleList.BusinessLogic.Repositories.UserRepository..ctor() in D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\Repositories\UserRepository.cs:line 12
+   at Infostructure.SimpleList.DataAccess.Tests.UserRepositoryTest.GetUserByUserNameAndPasswordTest() in D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess.Tests\UserRepositoryTest.cs:line 74
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

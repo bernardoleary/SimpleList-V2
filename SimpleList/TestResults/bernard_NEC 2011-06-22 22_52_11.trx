@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="33866abb-579f-4997-932b-f68c455f3500" name="bernard@NEC 2011-06-22 22:52:11" runUser="nec\bernard" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="c60156b2-9d72-4782-abb7-15b3962b81d9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="bernard_NEC 2011-06-22 22_52_11">
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\bin\Debug\Infostructure.SimpleList.BusinessLogic.dll" />
+      <DeploymentItem filename="d:\webapps\SimpleList\Infostructure.SimpleList.Web\bin\Infostructure.SimpleList.Web.dll" />
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.DataAccess\bin\Debug\Infostructure.SimpleList.DataAccess.dll" />
+      <DeploymentItem filename="D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\bin\Debug\Infostructure.SimpleList.Utilities.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-22T22:52:11.4874780+12:00" queuing="2011-06-22T22:52:12.9532045+12:00" start="2011-06-22T22:52:13.0977265+12:00" finish="2011-06-22T22:52:19.2809245+12:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="22" executed="5" passed="4" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="17" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="NEC" outcome="Error" timestamp="2011-06-22T22:52:19.2789715+12:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetUserByUserNameAndPasswordTest" storage="d:\webapps\simplelist\infostructure.simplelist.dataaccess.tests\bin\debug\infostructure.simplelist.dataaccess.tests.dll" id="b7350004-cf72-eac4-7eca-d4355f26d33b">
+      <Execution id="53f93658-c081-484d-9e6c-fe49e159946a" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.DataAccess.Tests/bin/Debug/Infostructure.SimpleList.DataAccess.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.DataAccess.Tests.UserRepositoryTest, Infostructure.SimpleList.DataAccess.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetUserByUserNameAndPasswordTest" />
+    </UnitTest>
+    <UnitTest name="UpdatePasswordTest" storage="d:\webapps\simplelist\infostructure.simplelist.dataaccess.tests\bin\debug\infostructure.simplelist.dataaccess.tests.dll" id="36bd73e9-529d-da88-ca77-7f168f32ec3f">
+      <Execution id="e6cf6509-509a-4eca-a735-74d160cf9dfc" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.DataAccess.Tests/bin/Debug/Infostructure.SimpleList.DataAccess.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.DataAccess.Tests.UserRepositoryTest, Infostructure.SimpleList.DataAccess.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="UpdatePasswordTest" />
+    </UnitTest>
+    <UnitTest name="Register_Get_ReturnsView" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="aecefb20-2860-c17e-2225-e0cb2062f3d7">
+      <Execution id="0711ac55-b934-44f1-8bb3-14ae4e870676" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Get_ReturnsView" />
+    </UnitTest>
+    <UnitTest name="AddUserTest" storage="d:\webapps\simplelist\infostructure.simplelist.dataaccess.tests\bin\debug\infostructure.simplelist.dataaccess.tests.dll" id="7fd6aa8a-a6c4-2efc-0e11-607dcad96d8f">
+      <Execution id="0f00dcbf-a82c-43d8-a382-ed5f3bd1d79c" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.DataAccess.Tests/bin/Debug/Infostructure.SimpleList.DataAccess.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.DataAccess.Tests.UserRepositoryTest, Infostructure.SimpleList.DataAccess.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AddUserTest" />
+    </UnitTest>
+    <UnitTest name="UpdateEmailTest" storage="d:\webapps\simplelist\infostructure.simplelist.dataaccess.tests\bin\debug\infostructure.simplelist.dataaccess.tests.dll" id="2e221db1-475c-f957-b842-46e1fea1868d">
+      <Execution id="1122d761-cb0c-4aef-a526-923fe14a25d0" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.DataAccess.Tests/bin/Debug/Infostructure.SimpleList.DataAccess.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.DataAccess.Tests.UserRepositoryTest, Infostructure.SimpleList.DataAccess.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="UpdateEmailTest" />
+    </UnitTest>
+    <UnitTest name="Register_Post_ReturnsViewIfModelStateIsInvalid" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="e6e12c4a-7af4-1cce-e941-39c833be7d9b">
+      <Execution id="17174304-acd3-4b5f-977e-cdeec079f532" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Post_ReturnsViewIfModelStateIsInvalid" />
+    </UnitTest>
+    <UnitTest name="LogOn_Post_ReturnsRedirectOnSuccess_WithoutReturnUrl" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="bcca05bd-4a38-79aa-c7ed-75a534e0f5ad">
+      <Execution id="676dc845-448d-4b20-8dd2-0cf1d4389fb4" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsRedirectOnSuccess_WithoutReturnUrl" />
+    </UnitTest>
+    <UnitTest name="ChangePassword_Post_ReturnsViewIfModelStateIsInvalid" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="b3d8ab8a-5783-2ec3-0eab-599095f270b3">
+      <Execution id="74fe0512-7193-4f00-9345-74a2961ca58a" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Post_ReturnsViewIfModelStateIsInvalid" />
+    </UnitTest>
+    <UnitTest name="ChangePassword_Post_ReturnsViewIfChangePasswordFails" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="17ee1539-4a26-9425-9b14-8edbb146addc">
+      <Execution id="7e9bf3ee-a10f-47c8-a371-d054290a811f" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Post_ReturnsViewIfChangePasswordFails" />
+    </UnitTest>
+    <UnitTest name="LogOn_Post_ReturnsRedirectOnSuccess_WithReturnUrl" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="50a24e0e-73ce-b9c9-c309-b931b069b504">
+      <Execution id="82a899f6-b551-4f41-bd04-5d7e7b6b323e" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsRedirectOnSuccess_WithReturnUrl" />
+    </UnitTest>
+    <UnitTest name="LogOn_Post_ReturnsViewIfModelStateIsInvalid" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="20b20308-e514-7d0f-8ac3-aa3f120dcc0a">
+      <Execution id="ffa1ea2f-5ddc-4620-9210-06bdcfd7e590" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsViewIfModelStateIsInvalid" />
+    </UnitTest>
+    <UnitTest name="DeleteUserTest" storage="d:\webapps\simplelist\infostructure.simplelist.dataaccess.tests\bin\debug\infostructure.simplelist.dataaccess.tests.dll" id="4233f6ec-c2ee-ee20-53f1-06f4bc645eeb">
+      <Execution id="3758a7d4-8679-496a-8ac3-ad441b195db9" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.DataAccess.Tests/bin/Debug/Infostructure.SimpleList.DataAccess.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.DataAccess.Tests.UserRepositoryTest, Infostructure.SimpleList.DataAccess.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DeleteUserTest" />
+    </UnitTest>
+    <UnitTest name="LogOn_Get_ReturnsView" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="cc02b43a-1259-605e-3409-6dd35c2aae00">
+      <Execution id="aa3fe0ad-5f15-459f-bda2-b703eb160f4d" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Get_ReturnsView" />
+    </UnitTest>
+    <UnitTest name="LogOff_LogsOutAndRedirects" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="b8cc05a3-6dc8-d6c7-5e04-f626b5de636d">
+      <Execution id="0c3bcc26-545c-46f7-b7f9-c312d57a2b82" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOff_LogsOutAndRedirects" />
+    </UnitTest>
+    <UnitTest name="LogOn_Post_ReturnsViewIfValidateUserFails" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="21e37ef5-25b8-e8a3-5fc8-185e2dfd9657">
+      <Execution id="b69b8eed-70b2-47d0-99b6-631f7be26342" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsViewIfValidateUserFails" />
+    </UnitTest>
+    <UnitTest name="Register_Post_ReturnsRedirectOnSuccess" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="de902ee7-27b7-68b1-05ea-9025e90f8025">
+      <Execution id="ee1df9ab-7ce4-46cc-938d-e4832f731b42" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Post_ReturnsRedirectOnSuccess" />
+    </UnitTest>
+    <UnitTest name="ChangePassword_Post_ReturnsRedirectOnSuccess" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="2d80cb62-3e53-2e5f-8f80-1b2657ec2012">
+      <Execution id="9c250577-87ad-462a-ad59-f7595d26ed41" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Post_ReturnsRedirectOnSuccess" />
+    </UnitTest>
+    <UnitTest name="Index" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="1973614d-d4be-f28f-9cc6-eb8fdfe22175">
+      <Execution id="d460f77c-4f15-4644-bc0d-7463266fdc72" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.HomeControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+    <UnitTest name="ChangePasswordSuccess_ReturnsView" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="4a277adc-7ca2-b948-54bc-2b631dd6ed41">
+      <Execution id="a64fea9f-8c26-4e51-802b-5167a540e5f9" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePasswordSuccess_ReturnsView" />
+    </UnitTest>
+    <UnitTest name="ChangePassword_Get_ReturnsView" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="c1efeb32-8fea-69fd-6233-ac62e6f1e530">
+      <Execution id="87538a58-4446-47b7-90e7-b08caa7ab8da" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Get_ReturnsView" />
+    </UnitTest>
+    <UnitTest name="Register_Post_ReturnsViewIfRegistrationFails" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="a9a2b5f8-ab91-7602-212a-83dfdff7ebaa">
+      <Execution id="86dec3c3-05e1-471a-8c65-db15cc4ff856" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.AccountControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Post_ReturnsViewIfRegistrationFails" />
+    </UnitTest>
+    <UnitTest name="About" storage="d:\webapps\simplelist\infostructure.simplelist.web.tests\bin\debug\infostructure.simplelist.web.tests.dll" id="2dc6bd41-5698-d7ac-921a-3f0790d3f74c">
+      <Execution id="879acbc8-8f67-4777-b827-961fa95fa5fe" />
+      <TestMethod codeBase="D:/WebApps/SimpleList/Infostructure.SimpleList.Web.Tests/bin/Debug/Infostructure.SimpleList.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Infostructure.SimpleList.Web.Tests.Controllers.HomeControllerTest, Infostructure.SimpleList.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="About" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="17ee1539-4a26-9425-9b14-8edbb146addc" executionId="7e9bf3ee-a10f-47c8-a371-d054290a811f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1973614d-d4be-f28f-9cc6-eb8fdfe22175" executionId="d460f77c-4f15-4644-bc0d-7463266fdc72" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="20b20308-e514-7d0f-8ac3-aa3f120dcc0a" executionId="ffa1ea2f-5ddc-4620-9210-06bdcfd7e590" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="21e37ef5-25b8-e8a3-5fc8-185e2dfd9657" executionId="b69b8eed-70b2-47d0-99b6-631f7be26342" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d80cb62-3e53-2e5f-8f80-1b2657ec2012" executionId="9c250577-87ad-462a-ad59-f7595d26ed41" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2dc6bd41-5698-d7ac-921a-3f0790d3f74c" executionId="879acbc8-8f67-4777-b827-961fa95fa5fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2e221db1-475c-f957-b842-46e1fea1868d" executionId="1122d761-cb0c-4aef-a526-923fe14a25d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="36bd73e9-529d-da88-ca77-7f168f32ec3f" executionId="e6cf6509-509a-4eca-a735-74d160cf9dfc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4233f6ec-c2ee-ee20-53f1-06f4bc645eeb" executionId="3758a7d4-8679-496a-8ac3-ad441b195db9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4a277adc-7ca2-b948-54bc-2b631dd6ed41" executionId="a64fea9f-8c26-4e51-802b-5167a540e5f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="50a24e0e-73ce-b9c9-c309-b931b069b504" executionId="82a899f6-b551-4f41-bd04-5d7e7b6b323e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7fd6aa8a-a6c4-2efc-0e11-607dcad96d8f" executionId="0f00dcbf-a82c-43d8-a382-ed5f3bd1d79c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a9a2b5f8-ab91-7602-212a-83dfdff7ebaa" executionId="86dec3c3-05e1-471a-8c65-db15cc4ff856" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aecefb20-2860-c17e-2225-e0cb2062f3d7" executionId="0711ac55-b934-44f1-8bb3-14ae4e870676" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b3d8ab8a-5783-2ec3-0eab-599095f270b3" executionId="74fe0512-7193-4f00-9345-74a2961ca58a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b7350004-cf72-eac4-7eca-d4355f26d33b" executionId="53f93658-c081-484d-9e6c-fe49e159946a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b8cc05a3-6dc8-d6c7-5e04-f626b5de636d" executionId="0c3bcc26-545c-46f7-b7f9-c312d57a2b82" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bcca05bd-4a38-79aa-c7ed-75a534e0f5ad" executionId="676dc845-448d-4b20-8dd2-0cf1d4389fb4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c1efeb32-8fea-69fd-6233-ac62e6f1e530" executionId="87538a58-4446-47b7-90e7-b08caa7ab8da" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cc02b43a-1259-605e-3409-6dd35c2aae00" executionId="aa3fe0ad-5f15-459f-bda2-b703eb160f4d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="de902ee7-27b7-68b1-05ea-9025e90f8025" executionId="ee1df9ab-7ce4-46cc-938d-e4832f731b42" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6e12c4a-7af4-1cce-e941-39c833be7d9b" executionId="17174304-acd3-4b5f-977e-cdeec079f532" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="7e9bf3ee-a10f-47c8-a371-d054290a811f" testId="17ee1539-4a26-9425-9b14-8edbb146addc" testName="ChangePassword_Post_ReturnsViewIfChangePasswordFails" computerName="NEC" duration="00:00:00.1185885" startTime="2011-06-22T22:52:13.2324835+12:00" endTime="2011-06-22T22:52:14.0185660+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7e9bf3ee-a10f-47c8-a371-d054290a811f">
+    </UnitTestResult>
+    <UnitTestResult executionId="d460f77c-4f15-4644-bc0d-7463266fdc72" testId="1973614d-d4be-f28f-9cc6-eb8fdfe22175" testName="Index" computerName="NEC" duration="00:00:00.0010171" startTime="2011-06-22T22:52:14.0244250+12:00" endTime="2011-06-22T22:52:14.0361430+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d460f77c-4f15-4644-bc0d-7463266fdc72">
+    </UnitTestResult>
+    <UnitTestResult executionId="ffa1ea2f-5ddc-4620-9210-06bdcfd7e590" testId="20b20308-e514-7d0f-8ac3-aa3f120dcc0a" testName="LogOn_Post_ReturnsViewIfModelStateIsInvalid" computerName="NEC" duration="00:00:00.0013987" startTime="2011-06-22T22:52:14.0439550+12:00" endTime="2011-06-22T22:52:14.0556730+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ffa1ea2f-5ddc-4620-9210-06bdcfd7e590">
+    </UnitTestResult>
+    <UnitTestResult executionId="b69b8eed-70b2-47d0-99b6-631f7be26342" testId="21e37ef5-25b8-e8a3-5fc8-185e2dfd9657" testName="LogOn_Post_ReturnsViewIfValidateUserFails" computerName="NEC" duration="00:00:00.0008082" startTime="2011-06-22T22:52:14.0615320+12:00" endTime="2011-06-22T22:52:14.0722735+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b69b8eed-70b2-47d0-99b6-631f7be26342">
+    </UnitTestResult>
+    <UnitTestResult executionId="9c250577-87ad-462a-ad59-f7595d26ed41" testId="2d80cb62-3e53-2e5f-8f80-1b2657ec2012" testName="ChangePassword_Post_ReturnsRedirectOnSuccess" computerName="NEC" duration="00:00:05.2008390" startTime="2011-06-22T22:52:14.0791090+12:00" endTime="2011-06-22T22:52:19.2799480+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9c250577-87ad-462a-ad59-f7595d26ed41">
+    </UnitTestResult>
+    <UnitTestResult executionId="879acbc8-8f67-4777-b827-961fa95fa5fe" testId="2dc6bd41-5698-d7ac-921a-3f0790d3f74c" testName="About" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="879acbc8-8f67-4777-b827-961fa95fa5fe">
+    </UnitTestResult>
+    <UnitTestResult executionId="1122d761-cb0c-4aef-a526-923fe14a25d0" testId="2e221db1-475c-f957-b842-46e1fea1868d" testName="UpdateEmailTest" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1122d761-cb0c-4aef-a526-923fe14a25d0">
+    </UnitTestResult>
+    <UnitTestResult executionId="e6cf6509-509a-4eca-a735-74d160cf9dfc" testId="36bd73e9-529d-da88-ca77-7f168f32ec3f" testName="UpdatePasswordTest" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e6cf6509-509a-4eca-a735-74d160cf9dfc">
+    </UnitTestResult>
+    <UnitTestResult executionId="3758a7d4-8679-496a-8ac3-ad441b195db9" testId="4233f6ec-c2ee-ee20-53f1-06f4bc645eeb" testName="DeleteUserTest" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3758a7d4-8679-496a-8ac3-ad441b195db9">
+    </UnitTestResult>
+    <UnitTestResult executionId="a64fea9f-8c26-4e51-802b-5167a540e5f9" testId="4a277adc-7ca2-b948-54bc-2b631dd6ed41" testName="ChangePasswordSuccess_ReturnsView" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a64fea9f-8c26-4e51-802b-5167a540e5f9">
+    </UnitTestResult>
+    <UnitTestResult executionId="82a899f6-b551-4f41-bd04-5d7e7b6b323e" testId="50a24e0e-73ce-b9c9-c309-b931b069b504" testName="LogOn_Post_ReturnsRedirectOnSuccess_WithReturnUrl" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82a899f6-b551-4f41-bd04-5d7e7b6b323e">
+    </UnitTestResult>
+    <UnitTestResult executionId="0f00dcbf-a82c-43d8-a382-ed5f3bd1d79c" testId="7fd6aa8a-a6c4-2efc-0e11-607dcad96d8f" testName="AddUserTest" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f00dcbf-a82c-43d8-a382-ed5f3bd1d79c">
+    </UnitTestResult>
+    <UnitTestResult executionId="86dec3c3-05e1-471a-8c65-db15cc4ff856" testId="a9a2b5f8-ab91-7602-212a-83dfdff7ebaa" testName="Register_Post_ReturnsViewIfRegistrationFails" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="86dec3c3-05e1-471a-8c65-db15cc4ff856">
+    </UnitTestResult>
+    <UnitTestResult executionId="0711ac55-b934-44f1-8bb3-14ae4e870676" testId="aecefb20-2860-c17e-2225-e0cb2062f3d7" testName="Register_Get_ReturnsView" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0711ac55-b934-44f1-8bb3-14ae4e870676">
+    </UnitTestResult>
+    <UnitTestResult executionId="74fe0512-7193-4f00-9345-74a2961ca58a" testId="b3d8ab8a-5783-2ec3-0eab-599095f270b3" testName="ChangePassword_Post_ReturnsViewIfModelStateIsInvalid" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="74fe0512-7193-4f00-9345-74a2961ca58a">
+    </UnitTestResult>
+    <UnitTestResult executionId="53f93658-c081-484d-9e6c-fe49e159946a" testId="b7350004-cf72-eac4-7eca-d4355f26d33b" testName="GetUserByUserNameAndPasswordTest" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="53f93658-c081-484d-9e6c-fe49e159946a">
+    </UnitTestResult>
+    <UnitTestResult executionId="0c3bcc26-545c-46f7-b7f9-c312d57a2b82" testId="b8cc05a3-6dc8-d6c7-5e04-f626b5de636d" testName="LogOff_LogsOutAndRedirects" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c3bcc26-545c-46f7-b7f9-c312d57a2b82">
+    </UnitTestResult>
+    <UnitTestResult executionId="676dc845-448d-4b20-8dd2-0cf1d4389fb4" testId="bcca05bd-4a38-79aa-c7ed-75a534e0f5ad" testName="LogOn_Post_ReturnsRedirectOnSuccess_WithoutReturnUrl" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="676dc845-448d-4b20-8dd2-0cf1d4389fb4">
+    </UnitTestResult>
+    <UnitTestResult executionId="87538a58-4446-47b7-90e7-b08caa7ab8da" testId="c1efeb32-8fea-69fd-6233-ac62e6f1e530" testName="ChangePassword_Get_ReturnsView" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="87538a58-4446-47b7-90e7-b08caa7ab8da">
+    </UnitTestResult>
+    <UnitTestResult executionId="aa3fe0ad-5f15-459f-bda2-b703eb160f4d" testId="cc02b43a-1259-605e-3409-6dd35c2aae00" testName="LogOn_Get_ReturnsView" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aa3fe0ad-5f15-459f-bda2-b703eb160f4d">
+    </UnitTestResult>
+    <UnitTestResult executionId="ee1df9ab-7ce4-46cc-938d-e4832f731b42" testId="de902ee7-27b7-68b1-05ea-9025e90f8025" testName="Register_Post_ReturnsRedirectOnSuccess" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ee1df9ab-7ce4-46cc-938d-e4832f731b42">
+    </UnitTestResult>
+    <UnitTestResult executionId="17174304-acd3-4b5f-977e-cdeec079f532" testId="e6e12c4a-7af4-1cce-e941-39c833be7d9b" testName="Register_Post_ReturnsViewIfModelStateIsInvalid" computerName="NEC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="17174304-acd3-4b5f-977e-cdeec079f532">
+    </UnitTestResult>
+  </Results>
+</TestRun>

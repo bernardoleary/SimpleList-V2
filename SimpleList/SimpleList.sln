@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infostructure.SimpleList.BusinessLogic", "Infostructure.SimpleList.BusinessLogic\Infostructure.SimpleList.BusinessLogic.csproj", "{5833CE00-C18F-4424-B875-A8226C5F4565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infostructure.SimpleList.Utilities", "Infostructure.SimpleList.Utilities\Infostructure.SimpleList.Utilities.csproj", "{B8586404-DA9A-466E-8A72-CD6204BF102D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{44BB6B0E-014D-486A-B017-C53F97ECAAEF}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		SimpleList.vsmdi = SimpleList.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infostructure.SimpleList.BusinessLogic.Tests", "Infostructure.SimpleList.BusinessLogic.Tests\Infostructure.SimpleList.BusinessLogic.Tests.csproj", "{216F4C84-C15C-43D3-895D-FC45374FD619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infostructure.SimpleList.DataModel", "Infostructure.SimpleList.DataModel\Infostructure.SimpleList.DataModel.csproj", "{2700C5A6-0835-4386-96C6-D096CF7675B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infostructure.SimpleList.Web.Tests", "Infostructure.SimpleList.Web.Tests\Infostructure.SimpleList.Web.Tests.csproj", "{3079DA62-6A3F-4D29-AC8B-0AA5EEA27A7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infostructure.SimpleList.Web", "Infostructure.SimpleList.Web\Infostructure.SimpleList.Web.csproj", "{49217339-6618-4D59-AF31-8F57AB3E9A01}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SimpleList.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5833CE00-C18F-4424-B875-A8226C5F4565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5833CE00-C18F-4424-B875-A8226C5F4565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5833CE00-C18F-4424-B875-A8226C5F4565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5833CE00-C18F-4424-B875-A8226C5F4565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8586404-DA9A-466E-8A72-CD6204BF102D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8586404-DA9A-466E-8A72-CD6204BF102D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8586404-DA9A-466E-8A72-CD6204BF102D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8586404-DA9A-466E-8A72-CD6204BF102D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{216F4C84-C15C-43D3-895D-FC45374FD619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{216F4C84-C15C-43D3-895D-FC45374FD619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{216F4C84-C15C-43D3-895D-FC45374FD619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{216F4C84-C15C-43D3-895D-FC45374FD619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2700C5A6-0835-4386-96C6-D096CF7675B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2700C5A6-0835-4386-96C6-D096CF7675B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2700C5A6-0835-4386-96C6-D096CF7675B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2700C5A6-0835-4386-96C6-D096CF7675B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3079DA62-6A3F-4D29-AC8B-0AA5EEA27A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3079DA62-6A3F-4D29-AC8B-0AA5EEA27A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3079DA62-6A3F-4D29-AC8B-0AA5EEA27A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3079DA62-6A3F-4D29-AC8B-0AA5EEA27A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49217339-6618-4D59-AF31-8F57AB3E9A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49217339-6618-4D59-AF31-8F57AB3E9A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49217339-6618-4D59-AF31-8F57AB3E9A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49217339-6618-4D59-AF31-8F57AB3E9A01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

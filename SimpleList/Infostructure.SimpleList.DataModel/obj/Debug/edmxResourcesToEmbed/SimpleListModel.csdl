@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Infostructure.SimpleList.DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="SimpleListEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SimpleLists" EntityType="Infostructure.SimpleList.DataModel.SimpleList" />
+    <EntitySet Name="SimpleListItems" EntityType="Infostructure.SimpleList.DataModel.SimpleListItem" />
+    <EntitySet Name="Users" EntityType="Infostructure.SimpleList.DataModel.User" />
+    <AssociationSet Name="FK_List_User" Association="Infostructure.SimpleList.DataModel.FK_List_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SimpleList" EntitySet="SimpleLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListItem_List" Association="Infostructure.SimpleList.DataModel.FK_ListItem_List">
+      <End Role="SimpleList" EntitySet="SimpleLists" />
+      <End Role="SimpleListItem" EntitySet="SimpleListItems" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SimpleList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" />
+    <Property Name="AllDone" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Infostructure.SimpleList.DataModel.FK_List_User" FromRole="SimpleList" ToRole="User" />
+    <NavigationProperty Name="SimpleListItems" Relationship="Infostructure.SimpleList.DataModel.FK_ListItem_List" FromRole="SimpleList" ToRole="SimpleListItem" />
+  </EntityType>
+  <EntityType Name="SimpleListItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SimpleListID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="700" Unicode="false" FixedLength="false" />
+    <Property Name="Done" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="SimpleList" Relationship="Infostructure.SimpleList.DataModel.FK_ListItem_List" FromRole="SimpleListItem" ToRole="SimpleList" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="SimpleLists" Relationship="Infostructure.SimpleList.DataModel.FK_List_User" FromRole="User" ToRole="SimpleList" />
+  </EntityType>
+  <Association Name="FK_List_User">
+    <End Role="User" Type="Infostructure.SimpleList.DataModel.User" Multiplicity="0..1" />
+    <End Role="SimpleList" Type="Infostructure.SimpleList.DataModel.SimpleList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SimpleList">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListItem_List">
+    <End Role="SimpleList" Type="Infostructure.SimpleList.DataModel.SimpleList" Multiplicity="1" />
+    <End Role="SimpleListItem" Type="Infostructure.SimpleList.DataModel.SimpleListItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SimpleList">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SimpleListItem">
+        <PropertyRef Name="SimpleListID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
