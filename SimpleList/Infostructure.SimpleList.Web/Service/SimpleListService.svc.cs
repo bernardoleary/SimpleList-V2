@@ -18,6 +18,7 @@ namespace Infostructure.SimpleList.Web.Service
     public class SimpleListService : ISimpleListService
     {
         private SimpleListRepository _simpleListRepository = null;
+        private SimpleListItemRepository _simpleListItemRepository = null;
 
         public List<Models.SimpleListModel> GetSimpleLists(string userName, string password)
         {
@@ -31,6 +32,20 @@ namespace Infostructure.SimpleList.Web.Service
                         Name = simpleList.Name,
                         AllDone = simpleList.AllDone,
                         DateAdded = simpleList.DateAdded
+                    }).ToList();
+        }
+
+        public List<Models.SimpleListItemModel> GetSimpleListItems(string userName, string password, string simpleListId)
+        {
+            _simpleListItemRepository = new SimpleListItemRepository();
+            var simpleListItems = _simpleListItemRepository.GetSimpleListItems(int.Parse(simpleListId));
+            return (from simpleListItem in simpleListItems
+                    select new Models.SimpleListItemModel
+                    {
+                        ID = simpleListItem.ID,
+                        Description = simpleListItem.Description,
+                        Done = simpleListItem.Done,
+                        SimpleListID = simpleListItem.SimpleListID
                     }).ToList();
         }
 
