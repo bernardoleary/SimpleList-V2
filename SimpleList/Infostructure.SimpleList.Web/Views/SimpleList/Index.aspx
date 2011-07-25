@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Infostructure.SimpleList.DataModel.SimpleList>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Infostructure.SimpleList.DataModel.Models.SimpleList>>" %>
 <%@ Import Namespace="Infostructure.SimpleList.Web.Controllers"%>
 <%@ Import Namespace="Microsoft.Web.Mvc"%>
 

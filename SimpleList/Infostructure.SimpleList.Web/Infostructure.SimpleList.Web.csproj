@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Mvc">
       <HintPath>Resources\Microsoft.Web.Mvc.dll</HintPath>
@@ -93,18 +96,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\SimpleListItemModel.cs" />
-    <Compile Include="Models\SimpleListModel.cs" />
+    <Compile Include="Models\SimpleListItemViewModel.cs" />
+    <Compile Include="Models\SimpleListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\ISimpleListService.cs" />
-    <Compile Include="Service\SampleItem.cs" />
-    <Compile Include="Service\SimpleListService.svc.cs">
-      <DependentUpon>SimpleListService.svc</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Service\SimpleListService.svc" />
     <Content Include="Views\SimpleListItem\Create.aspx" />
     <Content Include="Views\SimpleListItem\Index.aspx" />
     <Content Include="Views\SimpleList\Create.aspx" />
@@ -170,8 +167,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59676</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>5900</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

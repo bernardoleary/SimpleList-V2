@@ -43,20 +43,20 @@ namespace Infostructure.SimpleList.Web.Controllers
 
         public ActionResult Create(int simpleListId)
         {
-            return View("Create", new SimpleListItemModel { SimpleListID = simpleListId });
+            return View("Create", new SimpleListItemViewModel { SimpleListID = simpleListId });
         }
 
         //
         // POST: /Lists/{simpleListId}/ListItems/Create
 
         [HttpPost]
-        public ActionResult Create(int simpleListId, SimpleListItemModel simpleListItemModel)
+        public ActionResult Create(int simpleListId, SimpleListItemViewModel simpleListItemModel)
         {
             try
             {
                 if (User.Identity.IsAuthenticated)
                 {
-                    var simpleListItem = new SimpleList.DataModel.SimpleListItem();
+                    var simpleListItem = new SimpleList.DataModel.Models.SimpleListItem();
                     simpleListItem.Description = simpleListItemModel.Description;
                     simpleListItem.SimpleListID = simpleListItemModel.SimpleListID;
                     _simpleListItemRepository = new SimpleListItemRepository();
@@ -86,7 +86,7 @@ namespace Infostructure.SimpleList.Web.Controllers
         // GET: /Lists/{simpleListId}/ListItems/Edit/{simpleListItemId}
 
         [HttpPost]
-        public ActionResult EditListItem(int simpleListItemId, SimpleListItem collection)
+        public ActionResult EditListItem(int simpleListItemId, SimpleListItemViewModel collection)
         {
             try
             {

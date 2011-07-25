@@ -10,6 +10,7 @@ using System.Web.Security;
 using Infostructure.SimpleList.Web.Models;
 using Infostructure.SimpleList.BusinessLogic.Repositories;
 using Infostructure.SimpleList.DataModel;
+using Infostructure.SimpleList.DataModel.Models;
 
 namespace Infostructure.SimpleList.Web.Controllers
 {

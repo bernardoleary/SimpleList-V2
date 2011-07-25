@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Infostructure.SimpleList.DataModel;
+using Infostructure.SimpleList.DataModel.Models;
+using Infostructure.SimpleList.DataModel.DataAccess;
 
 namespace Infostructure.SimpleList.BusinessLogic.Repositories
 {
@@ -20,7 +22,7 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             this._simpleListEntities = _simpleListEntities;
         }
 
-        public IEnumerable<SimpleListItem> GetSimpleListItems(SimpleList.DataModel.SimpleList simpleList)
+        public IEnumerable<SimpleListItem> GetSimpleListItems(SimpleList.DataModel.Models.SimpleList simpleList)
         {
             var simpleListItems = from simpleListItem in _simpleListEntities.SimpleListItems
                                   where simpleListItem.SimpleListID == simpleList.ID
@@ -55,13 +57,13 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
 
         public void AddSimpleListItem(SimpleListItem simpleListItem)
         {
-            _simpleListEntities.SimpleListItems.AddObject(simpleListItem);
+            _simpleListEntities.SimpleListItems.Add(simpleListItem);
             _simpleListEntities.SaveChanges();
         }
 
         public void DeleteSimpleListItem(SimpleListItem simpleListItem)
         {
-            _simpleListEntities.SimpleListItems.DeleteObject(simpleListItem);
+            _simpleListEntities.SimpleListItems.Remove(simpleListItem);
             _simpleListEntities.SaveChanges();
         }
     }

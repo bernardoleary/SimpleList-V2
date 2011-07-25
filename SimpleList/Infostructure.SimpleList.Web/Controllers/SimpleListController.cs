@@ -19,11 +19,20 @@ namespace Infostructure.SimpleList.Web.Controllers
 
         public ActionResult Index()
         {
+            string userName = Request.QueryString["userName"];
+            string password = Request.QueryString["password"];
+
             if (User.Identity.IsAuthenticated)
             {
                 _simpleListRepository = new SimpleListRepository();
                 var simpleLists = _simpleListRepository.GetSimpleLists(User.Identity.Name);
                 return View("Index", simpleLists);
+            }
+            else if (userName != null && password != null)
+            {
+                _simpleListRepository = new SimpleListRepository();
+                var simpleLists = _simpleListRepository.GetSimpleLists(userName, password);
+                return Json(simpleLists, JsonRequestBehavior.AllowGet);
             }
             else
                 return View("Index");
@@ -49,7 +58,7 @@ namespace Infostructure.SimpleList.Web.Controllers
         // POST: /Lists/Create
 
         [HttpPost]
-        public ActionResult Create(SimpleListModel simpleListModel)
+        public ActionResult Create(SimpleListViewModel simpleListModel)
         {
             try
             {
@@ -57,7 +66,7 @@ namespace Infostructure.SimpleList.Web.Controllers
                 {
                     _userRepository = new UserRepository();
                     var user = _userRepository.GetUser(User.Identity.Name);
-                    var simpleList = new SimpleList.DataModel.SimpleList();
+                    var simpleList = new SimpleList.DataModel.Models.SimpleList();
                     simpleList.Name = simpleListModel.Name;
                     simpleList.UserID = user.ID;
                     simpleList.DateAdded = DateTime.Now;

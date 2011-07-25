@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.ServiceModel.Activation;
-using Infostructure.SimpleList.Web.Service;
+//using Infostructure.SimpleList.Web.Service;
 
 namespace Infostructure.SimpleList.Web
 {
@@ -24,7 +24,7 @@ namespace Infostructure.SimpleList.Web
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional }); // Parameter defaults
 
             // Edit the base address of Service1 by replacing the "Service1" string below
-            RouteTable.Routes.Add(new ServiceRoute("SimpleListService.svc", new WebServiceHostFactory(), typeof(SimpleListService)));
+            //RouteTable.Routes.Add(new ServiceRoute("SimpleListService.svc", new WebServiceHostFactory(), typeof(SimpleListService)));
 
         }
 

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Infostructure.SimpleList.Utilities.Exceptions;
 using Infostructure.SimpleList.DataModel;
+using Infostructure.SimpleList.DataModel.Models;
+using Infostructure.SimpleList.DataModel.DataAccess;
 
 namespace Infostructure.SimpleList.BusinessLogic.Repositories
 {
@@ -29,7 +31,7 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
 
         public void AddUser(User user)
         {
-            _simpleListEntities.Users.AddObject(user);
+            _simpleListEntities.Users.Add(user);
             _simpleListEntities.SaveChanges();
         }
 
@@ -52,8 +54,8 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             var simpleListRepository = new SimpleListRepository(_simpleListEntities);
             var simpleLists = simpleListRepository.GetSimpleLists(user);
             if (simpleLists.Count() > 0)
-                throw new NonEmptyEntityException(NonEmptyEntityException.GetExceptionMessage(typeof(User), typeof(SimpleList.DataModel.SimpleListItem)));
-            _simpleListEntities.Users.DeleteObject(user);
+                throw new NonEmptyEntityException(NonEmptyEntityException.GetExceptionMessage(typeof(User), typeof(SimpleList.DataModel.Models.SimpleListItem)));
+            _simpleListEntities.Users.Remove(user);
             _simpleListEntities.SaveChanges();
         }
     }

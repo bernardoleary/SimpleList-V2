@@ -73,7 +73,7 @@ namespace Infostructure.SimpleList.BusinessLogic.Tests
         {
             SimpleListRepository target = new SimpleListRepository();
             int simpleListId = 1;
-            Infostructure.SimpleList.DataModel.SimpleList actual;
+            Infostructure.SimpleList.DataModel.Models.SimpleList actual;
             actual = target.GetSimpleList(simpleListId);
             Assert.IsNotNull(actual);
         }

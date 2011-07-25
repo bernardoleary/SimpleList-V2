@@ -5,18 +5,18 @@ using System.Web;
 
 namespace Infostructure.SimpleList.Web.Models
 {
-    public class SimpleListItemModel : Infostructure.SimpleList.DataModel.ISimpleListItem
+    public class SimpleListViewModel
     {
 
-        #region ISimpleListItem Members
+        #region ISimpleList Members
 
-        public string Description
+        public bool AllDone
         {
             get;
             set;
         }
 
-        public bool Done
+        public DateTime DateAdded
         {
             get;
             set;
@@ -28,7 +28,19 @@ namespace Infostructure.SimpleList.Web.Models
             set;
         }
 
-        public int SimpleListID
+        public string Name
+        {
+            get;
+            set;
+        }
+
+        public ICollection<DataModel.Models.SimpleListItem> SimpleListItems
+        {
+            get;
+            set;
+        }
+
+        public int? UserID
         {
             get;
             set;

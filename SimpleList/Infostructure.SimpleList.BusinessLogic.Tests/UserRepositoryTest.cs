@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Infostructure.SimpleList.DataModel;
+using Infostructure.SimpleList.DataModel.Models;
 
 namespace Infostructure.SimpleList.BusinessLogic.Tests
 {
