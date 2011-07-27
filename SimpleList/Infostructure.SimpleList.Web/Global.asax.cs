@@ -33,6 +33,9 @@ namespace Infostructure.SimpleList.Web
             AreaRegistration.RegisterAllAreas();
 
             RegisterRoutes(RouteTable.Routes);
+
+            AutoMapper.Mapper.CreateMap<DataModel.Models.SimpleListItem, Models.SimpleListItemViewModel>();
+            AutoMapper.Mapper.CreateMap<DataModel.Models.SimpleList, Models.SimpleListViewModel>();
         }
     }
 }

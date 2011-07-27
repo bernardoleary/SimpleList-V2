@@ -8,6 +8,11 @@ namespace Infostructure.SimpleList.DataModel.DataAccess
 {
     public class SimpleListEntities : DbContext
     {
+        public SimpleListEntities()
+        {
+            this.Configuration.LazyLoadingEnabled = false;
+        }
+
         public DbSet<Models.User> Users
         {
             get;

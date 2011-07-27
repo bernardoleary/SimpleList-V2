@@ -7,9 +7,6 @@ namespace Infostructure.SimpleList.Web.Models
 {
     public class SimpleListViewModel
     {
-
-        #region ISimpleList Members
-
         public bool AllDone
         {
             get;
@@ -34,7 +31,7 @@ namespace Infostructure.SimpleList.Web.Models
             set;
         }
 
-        public ICollection<DataModel.Models.SimpleListItem> SimpleListItems
+        public List<SimpleListItemViewModel> SimpleListItems
         {
             get;
             set;
@@ -45,7 +42,5 @@ namespace Infostructure.SimpleList.Web.Models
             get;
             set;
         }
-
-        #endregion
     }
 }

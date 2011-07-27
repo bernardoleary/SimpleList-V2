@@ -7,9 +7,6 @@ namespace Infostructure.SimpleList.Web.Models
 {
     public class SimpleListItemViewModel
     {
-
-        #region ISimpleListItem Members
-
         public string Description
         {
             get;
@@ -33,7 +30,5 @@ namespace Infostructure.SimpleList.Web.Models
             get;
             set;
         }
-
-        #endregion
     }
 }
