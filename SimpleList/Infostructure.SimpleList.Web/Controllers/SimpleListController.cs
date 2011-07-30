@@ -32,8 +32,9 @@ namespace Infostructure.SimpleList.Web.Controllers
             {
                 _simpleListRepository = new SimpleListRepository();
                 var simpleLists = _simpleListRepository.GetSimpleLists(userName, password);
-                var simpleListsDto = AutoMapper.Mapper.Map<IEnumerable<DataModel.Models.SimpleList>, IEnumerable<Models.SimpleListViewModel>>(simpleLists);
-                return Json(simpleListsDto, JsonRequestBehavior.AllowGet);
+                var mapper = new Models.Mapping.Mapper();
+                var simpleListViewModels = mapper.SimpleListsToSimpleListViewModels(simpleLists);
+                return Json(simpleListViewModels, JsonRequestBehavior.AllowGet);
             }
             else
                 return View("Index");

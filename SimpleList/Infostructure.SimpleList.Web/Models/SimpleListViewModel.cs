@@ -31,7 +31,7 @@ namespace Infostructure.SimpleList.Web.Models
             set;
         }
 
-        public List<SimpleListItemViewModel> SimpleListItems
+        public IEnumerable<SimpleListItemViewModel> SimpleListItems
         {
             get;
             set;

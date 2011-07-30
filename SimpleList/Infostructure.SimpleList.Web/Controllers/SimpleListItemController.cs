@@ -28,11 +28,22 @@ namespace Infostructure.SimpleList.Web.Controllers
 
         public ActionResult Index(int simpleListId)
         {
+            string userName = Request.QueryString["userName"];
+            string password = Request.QueryString["password"];
+
             if (User.Identity.IsAuthenticated)
             {
                 _simpleListRepository = new SimpleListRepository();
                 var simpleList = _simpleListRepository.GetSimpleList(simpleListId);
                 return View("Index", simpleList);
+            }
+            else if (userName != null && password != null)
+            {
+                _simpleListItemRepository = new SimpleListItemRepository();
+                var simpleListItems = _simpleListItemRepository.GetSimpleListItems(simpleListId);
+                var mapper = new Models.Mapping.Mapper();
+                var simpleListItemsViewModels = mapper.SimpleListItemsToSimpleListItemViewModels(simpleListItems);
+                return Json(simpleListItemsViewModels, JsonRequestBehavior.AllowGet);
             }
             else
                 return View("Index");

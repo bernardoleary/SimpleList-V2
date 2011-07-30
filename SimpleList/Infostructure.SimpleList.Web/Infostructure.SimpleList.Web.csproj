@@ -34,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper">
-      <HintPath>..\Resources\AutoMapper.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -95,6 +92,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SimpleListController.cs" />
     <Compile Include="Controllers\SimpleListItemController.cs" />
+    <Compile Include="Models\Mapping\Mapper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

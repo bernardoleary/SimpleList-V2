@@ -23,6 +23,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{851E5E3B-ABDC-4E0B-ADE2-44A374D26FC6}"
 	ProjectSection(SolutionItems) = preProject
 		Resources\AutoMapper.dll = Resources\AutoMapper.dll
+		Resources\Omu.ValueInjecter.dll = Resources\Omu.ValueInjecter.dll
+		Resources\Omu.ValueInjecter.pdb = Resources\Omu.ValueInjecter.pdb
+		Resources\Omu.ValueInjecter.XML = Resources\Omu.ValueInjecter.XML
 	EndProjectSection
 EndProject
 Global
