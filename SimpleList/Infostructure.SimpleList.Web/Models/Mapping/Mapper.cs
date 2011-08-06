@@ -9,7 +9,7 @@ namespace Infostructure.SimpleList.Web.Models.Mapping
 {
     public class Mapper
     {
-        public SimpleListViewModel SimpleListToSimpleListViewModel(DataModel.Models.SimpleList simpleList)
+        public SimpleListViewModel SimpleListToSimpleListViewModel(DataModel.Models.SimpleList simpleList, bool populateSubStructures = true)
         {
             SimpleListViewModel simpleListViewModel = new SimpleListViewModel();
             simpleListViewModel.ID = simpleList.ID;
@@ -39,7 +39,7 @@ namespace Infostructure.SimpleList.Web.Models.Mapping
             return simpleListItemViewModels;
         }
 
-        public IEnumerable<SimpleListViewModel> SimpleListsToSimpleListViewModels(IEnumerable<DataModel.Models.SimpleList> simpleLists)
+        public IEnumerable<SimpleListViewModel> SimpleListsToSimpleListViewModels(IEnumerable<DataModel.Models.SimpleList> simpleLists, bool populateSubStructures = true)
         {
             var simpleListItemViewModels = new List<SimpleListViewModel>();
             foreach (var simpleList in simpleLists)

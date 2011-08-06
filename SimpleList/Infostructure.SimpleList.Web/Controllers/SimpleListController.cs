@@ -33,7 +33,7 @@ namespace Infostructure.SimpleList.Web.Controllers
                 _simpleListRepository = new SimpleListRepository();
                 var simpleLists = _simpleListRepository.GetSimpleLists(userName, password);
                 var mapper = new Models.Mapping.Mapper();
-                var simpleListViewModels = mapper.SimpleListsToSimpleListViewModels(simpleLists);
+                var simpleListViewModels = mapper.SimpleListsToSimpleListViewModels(simpleLists, false);
                 return Json(simpleListViewModels, JsonRequestBehavior.AllowGet);
             }
             else
