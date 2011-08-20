@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Infostructure.SimpleList.DataModel.Models.SimpleList>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Infostructure.SimpleList.Web.Models.SimpleListViewModel>>" %>
 <%@ Import Namespace="Infostructure.SimpleList.Web.Controllers"%>
 <%@ Import Namespace="Microsoft.Web.Mvc"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Index
+	Your Simple Lists
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

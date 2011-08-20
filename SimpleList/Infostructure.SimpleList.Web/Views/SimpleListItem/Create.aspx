@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Infostructure.SimpleList.Web.Models.SimpleListItemModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Infostructure.SimpleList.Web.Models.SimpleListItemViewModel>" %>
 <%@ Import Namespace="Infostructure.SimpleList.Web.Controllers"%>
 <%@ Import Namespace="Microsoft.Web.Mvc"%>
 
@@ -32,7 +32,7 @@
     <% } %>
 
     <div>
-        <%: Html.ActionLink<SimpleListItemController>(c => c.Index(Model.SimpleListId), "Back to List Items") %>
+        <%: Html.ActionLink<SimpleListItemController>(c => c.Index(Model.SimpleListID), "Back to List Items") %>
     </div>
 
 </asp:Content>

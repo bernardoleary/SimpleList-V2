@@ -3,7 +3,7 @@
 <%@ Import Namespace="Microsoft.Web.Mvc"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Index
+	Simple List Items for "<%: Model.Name %>"
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -54,7 +54,7 @@
     </table>
 
     <p>
-        <%= Html.ActionLink<SimpleListItemController>(c => c.Create(Model.ID), "Create New") %>
+        <%= Html.ActionLink<SimpleListItemController>(c => c.Create(Model.ID), "Create New Item") %>
     </p>
 
 </asp:Content>

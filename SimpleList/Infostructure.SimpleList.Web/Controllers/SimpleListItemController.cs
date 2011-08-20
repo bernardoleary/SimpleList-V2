@@ -15,26 +15,24 @@ namespace Infostructure.SimpleList.Web.Controllers
         private SimpleListRepository _simpleListRepository = null;
         private SimpleListItemRepository _simpleListItemRepository = null;
 
-        //
-        // GET: /SimpleListItem/Details/5
-
         public ActionResult Details(int id)
         {
             return View();
         }
-
-        //
-        // GET: /Lists/{simpleListId}/ListItems
 
         public ActionResult Index(int simpleListId)
         {
             string userName = Request.QueryString["userName"];
             string password = Request.QueryString["password"];
 
+            // we return simple list with the simple list items populated if we're viwing the website
+            // else we return just the simple list items
             if (User.Identity.IsAuthenticated)
             {
                 _simpleListRepository = new SimpleListRepository();
                 var simpleList = _simpleListRepository.GetSimpleList(simpleListId);
+                var mapper = new Models.Mapping.Mapper();
+                var simpleListViewModels = mapper.SimpleListToSimpleListViewModel(simpleList, true);
                 return View("Index", simpleList);
             }
             else if (userName != null && password != null)
@@ -49,16 +47,10 @@ namespace Infostructure.SimpleList.Web.Controllers
                 return View("Index");
         }
 
-        //
-        // GET: /Lists/{simpleListId}/ListItems/Create
-
         public ActionResult Create(int simpleListId)
         {
             return View("Create", new SimpleListItemViewModel { SimpleListID = simpleListId });
         }
-
-        //
-        // POST: /Lists/{simpleListId}/ListItems/Create
 
         [HttpPost]
         public ActionResult Create(int simpleListId, SimpleListItemViewModel simpleListItemModel)
@@ -72,10 +64,10 @@ namespace Infostructure.SimpleList.Web.Controllers
                     simpleListItem.SimpleListID = simpleListItemModel.SimpleListID;
                     _simpleListItemRepository = new SimpleListItemRepository();
                     _simpleListItemRepository.AddSimpleListItem(simpleListItem);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", new { simpleListId = simpleListItemModel.SimpleListID });
                 }
                 else
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", "SimpleList");
             }
             catch
             {
@@ -83,18 +75,12 @@ namespace Infostructure.SimpleList.Web.Controllers
             }
         }
 
-        //
-        // GET: /Lists/{simpleListId}/ListItems/Edit/{simpleListItemId}
-
         public ActionResult Edit(int simpleListItemId)
         {
             _simpleListItemRepository = new SimpleListItemRepository();
             var simpleListItem = _simpleListItemRepository.GetSimpleListItem(simpleListItemId);
             return View("Edit", simpleListItem);
         }
-
-        //
-        // GET: /Lists/{simpleListId}/ListItems/Edit/{simpleListItemId}
 
         [HttpPost]
         public ActionResult EditListItem(int simpleListItemId, SimpleListItemViewModel collection)
@@ -110,17 +96,11 @@ namespace Infostructure.SimpleList.Web.Controllers
                 return View();
             }
         }
-
-        //
-        // GET: /SimpleListItem/Delete/5
  
         public ActionResult Delete(int id)
         {
             return View();
         }
-
-        //
-        // POST: /SimpleListItem/Delete/5
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
