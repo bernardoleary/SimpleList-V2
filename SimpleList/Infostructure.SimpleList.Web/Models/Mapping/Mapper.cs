@@ -17,7 +17,9 @@ namespace Infostructure.SimpleList.Web.Models.Mapping
             simpleListViewModel.UserID = simpleList.UserID;
             simpleListViewModel.AllDone = simpleList.AllDone;
             simpleListViewModel.DateAdded = simpleList.DateAdded;
-            simpleListViewModel.SimpleListItems = SimpleListItemsToSimpleListItemViewModels(simpleList.SimpleListItems.AsEnumerable<DataModel.Models.SimpleListItem>());
+            // we only populate the simplelistitems if specifically requested
+            if (populateSubStructures)
+                simpleListViewModel.SimpleListItems = SimpleListItemsToSimpleListItemViewModels(simpleList.SimpleListItems.AsEnumerable<DataModel.Models.SimpleListItem>());
             return simpleListViewModel;
         }
 
@@ -43,7 +45,7 @@ namespace Infostructure.SimpleList.Web.Models.Mapping
         {
             var simpleListItemViewModels = new List<SimpleListViewModel>();
             foreach (var simpleList in simpleLists)
-                simpleListItemViewModels.Add(SimpleListToSimpleListViewModel(simpleList));
+                simpleListItemViewModels.Add(SimpleListToSimpleListViewModel(simpleList, populateSubStructures));
             return simpleListItemViewModels;
         }
     }

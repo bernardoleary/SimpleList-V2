@@ -21,7 +21,13 @@ namespace Infostructure.SimpleList.Web.Controllers
 
             // collect the simple list data
             _simpleListRepository = new SimpleListRepository();
-            var simpleLists = _simpleListRepository.GetSimpleLists(User.Identity.Name);
+            IEnumerable<SimpleList.DataModel.Models.SimpleList> simpleLists = null;
+            if (User.Identity.IsAuthenticated)
+                simpleLists = _simpleListRepository.GetSimpleLists(User.Identity.Name);
+            else if (userName != null && password != null)
+                simpleLists = _simpleListRepository.GetSimpleLists(userName, password);
+            else
+                return View("Index");
             var mapper = new Models.Mapping.Mapper();
             var simpleListViewModels = mapper.SimpleListsToSimpleListViewModels(simpleLists, false);
 
