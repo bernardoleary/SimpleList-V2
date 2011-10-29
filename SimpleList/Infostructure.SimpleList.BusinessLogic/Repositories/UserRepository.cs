@@ -49,6 +49,20 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             _simpleListEntities.SaveChanges();
         }
 
+        public void UpdateShowDoneLists(string userName, string oldPassword, bool showDoneLists)
+        {
+            var userForUpdate = GetUser(userName, oldPassword);
+            userForUpdate.ShowDoneLists = showDoneLists;
+            _simpleListEntities.SaveChanges();
+        }
+
+        public void UpdateShowDoneListItems(string userName, string oldPassword, bool showDoneListItems)
+        {
+            var userForUpdate = GetUser(userName, oldPassword);
+            userForUpdate.ShowDoneListItems = showDoneListItems;
+            _simpleListEntities.SaveChanges();
+        }
+
         public void DeleteUser(User user)
         {
             var simpleListRepository = new SimpleListRepository(_simpleListEntities);

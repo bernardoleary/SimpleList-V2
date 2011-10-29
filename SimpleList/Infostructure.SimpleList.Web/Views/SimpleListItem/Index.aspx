@@ -31,9 +31,9 @@
     
         <tr>
             <td>
-                <!-- <%: Html.ActionLink<SimpleListItemController>(c => c.Edit(item.ID), "Edit") %> | -->
+                <%: Html.ActionLink<SimpleListItemController>(c => c.ToggleDone(item.SimpleListID, item.ID), "Toggle Done")%> |       
                 <!-- <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })%> | -->
-                <!-- <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })%> -->
+                <%: Html.ActionLink<SimpleListItemController>(c => c.Delete(item.SimpleListID, item.ID), "Delete")%>
             </td>
             <td>
                 <%: item.ID %>

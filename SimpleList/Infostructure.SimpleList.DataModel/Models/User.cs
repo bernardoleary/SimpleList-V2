@@ -34,6 +34,18 @@ namespace Infostructure.SimpleList.DataModel.Models
             set;
         }
 
+        public bool ShowDoneLists
+        {
+            get;
+            set;
+        }
+
+        public bool ShowDoneListItems
+        {
+            get;
+            set;
+        }
+
         public virtual ICollection<SimpleList> SimpleLists
         {
             get;

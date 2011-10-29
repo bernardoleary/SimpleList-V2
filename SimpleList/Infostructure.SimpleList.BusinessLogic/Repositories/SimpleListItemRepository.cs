@@ -55,16 +55,36 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             return simpleListItems;
         }
 
-        public void AddSimpleListItem(SimpleListItem simpleListItem)
+        public int AddSimpleListItem(SimpleListItem simpleListItem)
         {
             _simpleListEntities.SimpleListItems.Add(simpleListItem);
-            _simpleListEntities.SaveChanges();
+            return _simpleListEntities.SaveChanges();
         }
 
-        public void DeleteSimpleListItem(SimpleListItem simpleListItem)
+        public int DeleteSimpleListItem(SimpleListItem simpleListItem)
         {
             _simpleListEntities.SimpleListItems.Remove(simpleListItem);
-            _simpleListEntities.SaveChanges();
+            return _simpleListEntities.SaveChanges();
+        }
+
+        public int DeleteSimpleListItem(int simpleListItemId)
+        {
+            var simpleListItem = GetSimpleListItem(simpleListItemId);
+            return DeleteSimpleListItem(simpleListItem);
+        }
+
+        public int UpdateSimpleListItem(SimpleListItem simpleListItem)
+        {
+            var entry = _simpleListEntities.Entry<SimpleListItem>(simpleListItem);
+            entry.State = System.Data.EntityState.Modified;
+            return _simpleListEntities.SaveChanges();
+        }
+
+        public int ToggleSimpleListItemDone(int simpleListItemId)
+        {
+            var simpleListItem = GetSimpleListItem(simpleListItemId);
+            simpleListItem.Done = !simpleListItem.Done;
+            return UpdateSimpleListItem(simpleListItem);
         }
     }
 }

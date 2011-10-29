@@ -20,7 +20,7 @@ namespace Infostructure.SimpleList.Web
 
             routes.MapRoute(
                 "Default", // Route name
-                "{controller}.aspx/{action}/{id}", // URL with parameters
+                "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional }); // Parameter defaults
 
             // Edit the base address of Service1 by replacing the "Service1" string below

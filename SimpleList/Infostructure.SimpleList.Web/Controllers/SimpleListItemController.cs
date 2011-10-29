@@ -14,37 +14,16 @@ namespace Infostructure.SimpleList.Web.Controllers
     {
         private SimpleListRepository _simpleListRepository = null;
         private SimpleListItemRepository _simpleListItemRepository = null;
-
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+        private bool? _isAspnetAuthenticated = null;
 
         public ActionResult Index(int simpleListId)
         {
-            string userName = Request.QueryString["userName"];
-            string password = Request.QueryString["password"];
-
             // we return simple list with the simple list items populated if we're viwing the website
             // else we return just the simple list items
-            if (User.Identity.IsAuthenticated)
-            {
-                _simpleListRepository = new SimpleListRepository();
-                var simpleList = _simpleListRepository.GetSimpleList(simpleListId);
-                var mapper = new Models.Mapping.Mapper();
-                var simpleListViewModels = mapper.SimpleListToSimpleListViewModel(simpleList, true);
-                return View("Index", simpleList);
-            }
-            else if (userName != null && password != null)
-            {
-                _simpleListItemRepository = new SimpleListItemRepository();
-                var simpleListItems = _simpleListItemRepository.GetSimpleListItems(simpleListId);
-                var mapper = new Models.Mapping.Mapper();
-                var simpleListItemsViewModels = mapper.SimpleListItemsToSimpleListItemViewModels(simpleListItems);
-                return Json(simpleListItemsViewModels, JsonRequestBehavior.AllowGet);
-            }
-            else
-                return View("Index");
+            _isAspnetAuthenticated = this.GetIsAspnetAuthenticated();
+            if (_isAspnetAuthenticated.HasValue)
+                return GetDataStructureToReturn(simpleListId, _isAspnetAuthenticated.Value);
+            return View("Index");
         }
 
         public ActionResult Create(int simpleListId)
@@ -59,6 +38,7 @@ namespace Infostructure.SimpleList.Web.Controllers
             {
                 if (User.Identity.IsAuthenticated)
                 {
+                    // create the objects and return the view model
                     var simpleListItem = new SimpleList.DataModel.Models.SimpleListItem();
                     simpleListItem.Description = simpleListItemModel.Description;
                     simpleListItem.SimpleListID = simpleListItemModel.SimpleListID;
@@ -75,45 +55,58 @@ namespace Infostructure.SimpleList.Web.Controllers
             }
         }
 
-        public ActionResult Edit(int simpleListItemId)
+        public ActionResult Delete(int simpleListId, int simpleListItemId)
         {
-            _simpleListItemRepository = new SimpleListItemRepository();
-            var simpleListItem = _simpleListItemRepository.GetSimpleListItem(simpleListItemId);
-            return View("Edit", simpleListItem);
+            // we return simple list with the simple list items populated if we're viewing the website
+            // else we return just the simple list items
+            _isAspnetAuthenticated = this.GetIsAspnetAuthenticated();
+            if (_isAspnetAuthenticated.HasValue)
+            {
+                // delete the simple list item
+                _simpleListItemRepository = new SimpleListItemRepository();
+                _simpleListItemRepository.DeleteSimpleListItem(simpleListItemId);
+                return GetDataStructureToReturn(simpleListId, _isAspnetAuthenticated.Value);
+            }
+            else
+                return View("Index");
         }
 
-        [HttpPost]
-        public ActionResult EditListItem(int simpleListItemId, SimpleListItemViewModel collection)
+        public ActionResult ToggleDone(int simpleListId, int simpleListItemId)
         {
-            try
+            // we return simple list with the simple list items populated if we're viwing the website
+            // else we return just the simple list items
+            _isAspnetAuthenticated = this.GetIsAspnetAuthenticated();
+            if (_isAspnetAuthenticated.HasValue)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                // set  the simple list item
+                _simpleListItemRepository = new SimpleListItemRepository();
+                _simpleListItemRepository.ToggleSimpleListItemDone(simpleListItemId);
+                return GetDataStructureToReturn(simpleListId, _isAspnetAuthenticated.Value);
             }
-            catch
-            {
-                return View();
-            }
-        }
- 
-        public ActionResult Delete(int id)
-        {
-            return View();
+            else
+                return View("Index");
         }
 
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        // this method returns an MVC view if we're in the ASP.NET UI, else a JSON structure
+        private ActionResult GetDataStructureToReturn(int simpleListId, bool returnView)
         {
-            try
+            if (returnView)
             {
-                // TODO: Add delete logic here
- 
-                return RedirectToAction("Index");
+                // get the simple list view model
+                _simpleListRepository = new SimpleListRepository();
+                var simpleList = _simpleListRepository.GetSimpleList(simpleListId);
+                var mapper = new Models.Mapping.Mapper();
+                var simpleListViewModels = mapper.SimpleListToSimpleListViewModel(simpleList, true);
+                return View("Index", simpleList);
             }
-            catch
+            else
             {
-                return View();
+                // get the JSON structure to return
+                _simpleListItemRepository = new SimpleListItemRepository();
+                var simpleListItems = _simpleListItemRepository.GetSimpleListItems(simpleListId);
+                var mapper = new Models.Mapping.Mapper();
+                var simpleListItemsViewModels = mapper.SimpleListItemsToSimpleListItemViewModels(simpleListItems);
+                return Json(simpleListItemsViewModels, JsonRequestBehavior.AllowGet);
             }
         }
     }
