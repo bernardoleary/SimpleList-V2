@@ -6,6 +6,7 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.lang.String;
 
 import android.content.Context;
 import android.util.Log;
@@ -32,8 +33,9 @@ public class DataAccess {
 	private final String URL = "http://www.infostructure.co.nz/SimpleList/";
 	/* == */
 	
-	private final String SIMPLE_LIST = "SimpleList.aspx";
-	private final String SIMPLE_LIST_ITEM = "SimpleListItem.aspx";
+	private final String SIMPLE_LIST = "SimpleList";
+	private final String SIMPLE_LIST_ITEM = "SimpleListItem";
+	private final String SIMPLE_LIST_ITEM_TOGGLE_DONE = SIMPLE_LIST_ITEM + "/ToggleDone";
 	private final String FILENAME = "settings";
 	private Context applicationContext = null;
 	private Mapper mapper = null;
@@ -106,6 +108,27 @@ public class DataAccess {
 			Log.d("Error: ", e.toString());
 			return null;
 		}
+	}
+
+	public String toggleSimpleListItemDone(int simpleListId, int simpleListItemId) throws Exception {
+		
+		// collect user credentials from external storage
+		UserCredentials credentials = getUserCredentials();
+		String userName = credentials.getUserName();
+		String password = credentials.getPassword();
+		
+		String simpleListUrl = URL + SIMPLE_LIST_ITEM_TOGGLE_DONE;
+		WebService webService = new WebService(simpleListUrl);
+
+		//Pass the parameters if needed , if not then pass dummy one as follows
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("userName", userName);
+		params.put("password", password);
+		params.put("simpleListId", simpleListId);
+		params.put("simpleListItemId", simpleListItemId);
+
+		//Get JSON response from server the "" are where the method name would normally go if needed example
+		return webService.webInvoke("", params);
 	}
 	
 	public UserCredentials getUserCredentials() throws Exception {

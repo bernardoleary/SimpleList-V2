@@ -15,9 +15,9 @@ import android.widget.TextView;
 
 public class SimpleListAdapter extends ArrayAdapter<SimpleList> {
 
-	int resource;
-	String response;
-	Context context;
+	private int resource;
+	private String response;
+	private Context context;
 	
 	// initialize adapter
 	public SimpleListAdapter(Context context, int resource, List<SimpleList> items) {

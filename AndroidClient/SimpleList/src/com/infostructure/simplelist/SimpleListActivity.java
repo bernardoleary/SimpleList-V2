@@ -53,7 +53,7 @@ public class SimpleListActivity extends BaseSimpleListActivity  {
 		for (int i=0; i<simpleLists.size(); i++)
 			array[i] = simpleLists.get(i).getName();
 		
-		ArrayAdapter<SimpleList> adapter = new SimpleListAdapter(this, R.layout.custom_list_item, simpleLists);
+		ArrayAdapter<SimpleList> adapter = new SimpleListAdapter(this, R.layout.simple_list_list_item, simpleLists);
 		setListAdapter(adapter);
 		
 		ListView lv = getListView();

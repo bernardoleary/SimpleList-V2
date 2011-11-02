@@ -13,6 +13,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.infostructure.simplelist.abstractions.BaseSimpleListActivity;
+import com.infostructure.simplelist.custom.SimpleListItemAdapter;
 import com.infostructure.simplelist.model.SimpleListItem;
 import com.infostructure.simplelist.utils.DataAccess;
 
@@ -38,6 +39,7 @@ public class SimpleListItemActivity extends BaseSimpleListActivity {
 	@Override
 	public void initControls() throws Exception {
 
+		// populate the simplelistitems structure
 		List<SimpleListItem> simpleListItems;
 		try {
 			simpleListItems = dataAccess.getSimpleListItems(BaseSimpleListActivity.getCurrentSimpleListId());
@@ -51,7 +53,8 @@ public class SimpleListItemActivity extends BaseSimpleListActivity {
 		for (int i=0; i<simpleListItems.size(); i++)
 			array[i] = simpleListItems.get(i).getDescription();
 		
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, array));
+		ArrayAdapter<SimpleListItem> adapter = new SimpleListItemAdapter(this, R.layout.simple_list_item_list_item, simpleListItems);
+		setListAdapter(adapter);
 		
 		ListView lv = getListView();
 		lv.setTextFilterEnabled(true);

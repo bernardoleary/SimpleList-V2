@@ -69,7 +69,7 @@ public class WebService{
     			Log.e("Groshie", "JSONException : "+e);
 			}
     	}
-        return webInvoke(methodName,  jsonObject.toString(), "application/json");
+        return webInvoke(methodName, jsonObject.toString(), "application/json");
     }
 
     // POST
@@ -103,7 +103,7 @@ public class WebService{
         Log.d("Groshie", webServiceUrl + "?" + data);
 
         try {
-            response = httpClient.execute(httpPost,localContext);
+            response = httpClient.execute(httpPost, localContext);
 
             if (response != null) {
                 ret = EntityUtils.toString(response.getEntity());
