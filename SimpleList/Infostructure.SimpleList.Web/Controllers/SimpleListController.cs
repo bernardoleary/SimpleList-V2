@@ -53,27 +53,20 @@ namespace Infostructure.SimpleList.Web.Controllers
         [HttpPost]
         public ActionResult Create(SimpleListViewModel simpleListModel)
         {
-            try
+            if (User.Identity.IsAuthenticated)
             {
-                if (User.Identity.IsAuthenticated)
-                {
-                    _userRepository = new UserRepository();
-                    var user = _userRepository.GetUser(User.Identity.Name);
-                    var simpleList = new SimpleList.DataModel.Models.SimpleList();
-                    simpleList.Name = simpleListModel.Name;
-                    simpleList.UserID = user.ID;
-                    simpleList.DateAdded = DateTime.Now;
-                    _simpleListRepository = new SimpleListRepository();
-                    _simpleListRepository.AddSimpleList(simpleList);
-                    return RedirectToAction("Index");
-                }
-                else
-                    return RedirectToAction("Index");
+                _userRepository = new UserRepository();
+                var user = _userRepository.GetUser(User.Identity.Name);
+                var simpleList = new SimpleList.DataModel.Models.SimpleList();
+                simpleList.Name = simpleListModel.Name;
+                simpleList.UserID = user.ID;
+                simpleList.DateAdded = DateTime.Now;
+                _simpleListRepository = new SimpleListRepository();
+                _simpleListRepository.AddSimpleList(simpleList);
+                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            else
+                return RedirectToAction("Index");
         }
  
         public ActionResult Delete(int id)
