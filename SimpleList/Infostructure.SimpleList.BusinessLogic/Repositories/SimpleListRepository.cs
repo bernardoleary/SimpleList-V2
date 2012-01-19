@@ -23,14 +23,6 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             this._simpleListEntities = _simpleListEntities;
         }
 
-        public IEnumerable<SimpleList.DataModel.Models.SimpleList> GetSimpleLists(User user)
-        {
-            var simpleLists = from simpleList in _simpleListEntities.SimpleLists
-                              where simpleList.UserID == user.ID
-                              select simpleList;
-            return simpleLists;
-        }
-
         public SimpleList.DataModel.Models.SimpleList GetSimpleList(int simpleListId)
         {
             var simpleListOut = (from simpleList in _simpleListEntities.SimpleLists
@@ -39,38 +31,29 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             return simpleListOut;
         }
 
-        public IEnumerable<SimpleList.DataModel.Models.SimpleList> GetSimpleLists(string userName)
+        public IEnumerable<SimpleList.DataModel.Models.SimpleList> GetSimpleLists(int userId)
         {
             var simpleLists = from simpleList in _simpleListEntities.SimpleLists
-                              join user in _simpleListEntities.Users on simpleList.UserID equals user.ID
-                              where user.Name == userName
+                              where simpleList.UserID == userId
                               select simpleList;
             return simpleLists;
         }
 
-        public IEnumerable<SimpleList.DataModel.Models.SimpleList> GetSimpleLists(string userName, string password)
-        {
-            var simpleLists = from simpleList in _simpleListEntities.SimpleLists
-                              join user in _simpleListEntities.Users on simpleList.UserID equals user.ID
-                              where user.Name == userName && user.Password == password
-                              select simpleList;
-            return simpleLists;
-        }
-
-        public void AddSimpleList(SimpleList.DataModel.Models.SimpleList simpleList)
+        public int AddSimpleList(SimpleList.DataModel.Models.SimpleList simpleList)
         {
             _simpleListEntities.SimpleLists.Add(simpleList);
-            _simpleListEntities.SaveChanges();
+            return _simpleListEntities.SaveChanges();
         }
 
-        public void DeleteSimpleList(SimpleList.DataModel.Models.SimpleList simpleList)
+        public int DeleteSimpleList(int simpleListId)
         {
             var simpleListItemRepository = new SimpleListItemRepository(_simpleListEntities);
-            var simpleListItems = simpleListItemRepository.GetSimpleListItems(simpleList);
+            var simpleListItems = simpleListItemRepository.GetSimpleListItems(simpleListId);
             if (simpleListItems.Count() > 0)
                 throw new NonEmptyEntityException(NonEmptyEntityException.GetExceptionMessage(typeof(SimpleList.DataModel.Models.SimpleList), typeof(SimpleListItem)));
+            var simpleList = GetSimpleList(simpleListId);
             _simpleListEntities.SimpleLists.Remove(simpleList);
-            _simpleListEntities.SaveChanges();
+            return _simpleListEntities.SaveChanges();
         }
     }
 }

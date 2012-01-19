@@ -66,7 +66,7 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
         public void DeleteUser(User user)
         {
             var simpleListRepository = new SimpleListRepository(_simpleListEntities);
-            var simpleLists = simpleListRepository.GetSimpleLists(user);
+            var simpleLists = simpleListRepository.GetSimpleLists(user.ID);
             if (simpleLists.Count() > 0)
                 throw new NonEmptyEntityException(NonEmptyEntityException.GetExceptionMessage(typeof(User), typeof(SimpleList.DataModel.Models.SimpleListItem)));
             _simpleListEntities.Users.Remove(user);

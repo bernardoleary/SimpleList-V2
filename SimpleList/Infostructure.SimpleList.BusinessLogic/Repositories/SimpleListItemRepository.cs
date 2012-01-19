@@ -22,14 +22,6 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             this._simpleListEntities = _simpleListEntities;
         }
 
-        public IEnumerable<SimpleListItem> GetSimpleListItems(SimpleList.DataModel.Models.SimpleList simpleList)
-        {
-            var simpleListItems = from simpleListItem in _simpleListEntities.SimpleListItems
-                                  where simpleListItem.SimpleListID == simpleList.ID
-                                  select simpleListItem;
-            return simpleListItems;
-        }
-
         public IEnumerable<SimpleListItem> GetSimpleListItems(int simpleListId)
         {
             var simpleListItems = from simpleListItem in _simpleListEntities.SimpleListItems
@@ -46,31 +38,17 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             return simpleListItemOut;
         }
 
-        public IEnumerable<SimpleListItem> GetSimpleListItems(User user)
-        {
-            var simpleListItems = from simpleListItem in _simpleListEntities.SimpleListItems
-                                  join simpleList in _simpleListEntities.SimpleLists on simpleListItem.SimpleListID equals simpleList.ID
-                                  where simpleList.UserID == user.ID
-                                  select simpleListItem;
-            return simpleListItems;
-        }
-
         public int AddSimpleListItem(SimpleListItem simpleListItem)
         {
             _simpleListEntities.SimpleListItems.Add(simpleListItem);
             return _simpleListEntities.SaveChanges();
         }
 
-        public int DeleteSimpleListItem(SimpleListItem simpleListItem)
-        {
-            _simpleListEntities.SimpleListItems.Remove(simpleListItem);
-            return _simpleListEntities.SaveChanges();
-        }
-
         public int DeleteSimpleListItem(int simpleListItemId)
         {
             var simpleListItem = GetSimpleListItem(simpleListItemId);
-            return DeleteSimpleListItem(simpleListItem);
+            _simpleListEntities.SimpleListItems.Remove(simpleListItem);
+            return _simpleListEntities.SaveChanges();
         }
 
         public int UpdateSimpleListItem(SimpleListItem simpleListItem)

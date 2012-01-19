@@ -17,10 +17,23 @@ namespace Infostructure.SimpleList.Web.Models.Mapping
             simpleListViewModel.UserID = simpleList.UserID;
             simpleListViewModel.AllDone = simpleList.AllDone;
             simpleListViewModel.DateAdded = simpleList.DateAdded;
-            // we only populate the simplelistitems if specifically requested
+            // We only populate the SimpleListItems if specifically requested.
             if (populateSubStructures)
                 simpleListViewModel.SimpleListItems = SimpleListItemsToSimpleListItemViewModels(simpleList.SimpleListItems.AsEnumerable<DataModel.Models.SimpleListItem>());
             return simpleListViewModel;
+        }
+
+        public DataModel.Models.SimpleList SimpleListViewModelToSimpleList(SimpleListViewModel simpleListViewModel)
+        {
+            DataModel.Models.SimpleList simpleList = new DataModel.Models.SimpleList();
+            simpleList.ID = simpleListViewModel.ID;
+            simpleList.Name = simpleListViewModel.Name;            
+            simpleList.AllDone = simpleListViewModel.AllDone;
+            simpleList.DateAdded = simpleListViewModel.DateAdded;
+            // We only populate the UserID if we have a value to populate.
+            if (simpleListViewModel.UserID.HasValue)
+                simpleList.UserID = simpleListViewModel.UserID.Value;
+            return simpleList;
         }
 
         public SimpleListItemViewModel SimpleListItemToSimpleListItemViewModel(DataModel.Models.SimpleListItem simpleListItem)
@@ -31,6 +44,16 @@ namespace Infostructure.SimpleList.Web.Models.Mapping
             simpleListItemViewModel.Description = simpleListItem.Description;
             simpleListItemViewModel.SimpleListID = simpleListItem.SimpleListID;
             return simpleListItemViewModel;
+        }
+
+        public SimpleListItem SimpleListItemViewModelToSimpleListItem(SimpleListItemViewModel simpleListItemViewModel)
+        {
+            SimpleListItem simpleListItem = new SimpleListItem();
+            simpleListItem.ID = simpleListItemViewModel.ID;
+            simpleListItem.Done = simpleListItemViewModel.Done;
+            simpleListItem.Description = simpleListItemViewModel.Description;
+            simpleListItem.SimpleListID = simpleListItemViewModel.SimpleListID;
+            return simpleListItem;
         }
 
         public IEnumerable<SimpleListItemViewModel> SimpleListItemsToSimpleListItemViewModels(IEnumerable<DataModel.Models.SimpleListItem> simpleListItems)

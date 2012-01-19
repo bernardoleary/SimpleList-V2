@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infostructure.SimpleList.BusinessLogic.Tests", "Infostructure.SimpleList.BusinessLogic.Tests\Infostructure.SimpleList.BusinessLogic.Tests.csproj", "{216F4C84-C15C-43D3-895D-FC45374FD619}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infostructure.SimpleList.DataModel", "Infostructure.SimpleList.DataModel\Infostructure.SimpleList.DataModel.csproj", "{2700C5A6-0835-4386-96C6-D096CF7675B3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infostructure.SimpleList.Web.Tests", "Infostructure.SimpleList.Web.Tests\Infostructure.SimpleList.Web.Tests.csproj", "{3079DA62-6A3F-4D29-AC8B-0AA5EEA27A7A}"
@@ -45,10 +43,6 @@ Global
 		{B8586404-DA9A-466E-8A72-CD6204BF102D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8586404-DA9A-466E-8A72-CD6204BF102D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8586404-DA9A-466E-8A72-CD6204BF102D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{216F4C84-C15C-43D3-895D-FC45374FD619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{216F4C84-C15C-43D3-895D-FC45374FD619}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{216F4C84-C15C-43D3-895D-FC45374FD619}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{216F4C84-C15C-43D3-895D-FC45374FD619}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2700C5A6-0835-4386-96C6-D096CF7675B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2700C5A6-0835-4386-96C6-D096CF7675B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2700C5A6-0835-4386-96C6-D096CF7675B3}.Release|Any CPU.ActiveCfg = Release|Any CPU

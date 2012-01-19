@@ -17,6 +17,10 @@
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <TransformWebConfigEnabled>True</TransformWebConfigEnabled>
+    <AutoParameterizationWebConfigConnectionStrings>
+	  False
+	</AutoParameterizationWebConfigConnectionStrings>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <TransformWebConfigEnabled>True</TransformWebConfigEnabled>
+    <AutoParameterizationWebConfigConnectionStrings>
+  	  False
+  	</AutoParameterizationWebConfigConnectionStrings>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
@@ -101,9 +109,17 @@
     <Compile Include="Models\SimpleListItemViewModel.cs" />
     <Compile Include="Models\SimpleListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ApiServicePartial.cs" />
+    <Compile Include="Services\IApiService.cs" />
+    <Compile Include="Services\SampleItem.cs" />
+    <Compile Include="Services\ApiService.svc.cs">
+      <DependentUpon>ApiService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Service1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Services\ApiService.svc" />
     <Content Include="Views\SimpleListItem\Create.aspx" />
     <Content Include="Views\SimpleListItem\Index.aspx" />
     <Content Include="Views\SimpleList\Create.aspx" />
@@ -116,6 +132,7 @@
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -142,6 +159,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="API\" />
     <Folder Include="App_Data\" />
     <Folder Include="Resources\" />
   </ItemGroup>
