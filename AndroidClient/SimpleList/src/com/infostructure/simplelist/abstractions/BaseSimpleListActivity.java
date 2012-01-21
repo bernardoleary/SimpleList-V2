@@ -2,6 +2,10 @@ package com.infostructure.simplelist.abstractions;
 
 import com.infostructure.simplelist.R;
 import com.infostructure.simplelist.SettingsActivity;
+import com.infostructure.simplelist.NewSimpleListActivity;
+import com.infostructure.simplelist.NewSimpleListItemActivity;
+import com.infostructure.simplelist.SimpleListActivity;
+import com.infostructure.simplelist.SimpleListItemActivity;
 import com.infostructure.simplelist.utils.DataAccess;
 
 import android.app.ListActivity;
@@ -28,7 +32,17 @@ public abstract class BaseSimpleListActivity extends ListActivity implements Use
 		intent = new Intent(this.getBaseContext(), SettingsActivity.class);
 		startActivity(intent);
 	}
-
+	
+	protected void showNewSimpleList() {
+		intent = new Intent(this.getBaseContext(), NewSimpleListActivity.class);
+		startActivity(intent);
+	}
+	
+	protected void showNewSimpleListItem() {
+		intent = new Intent(this.getBaseContext(), NewSimpleListItemActivity.class);
+		startActivity(intent);
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    MenuInflater inflater = getMenuInflater();
@@ -52,6 +66,13 @@ public abstract class BaseSimpleListActivity extends ListActivity implements Use
 				Log.d("Error: ", e.toString());
 			}
 	    	return true;
+	    case R.id.menu_item_new:
+	    	// show the settings screen
+	    	if (this instanceof SimpleListActivity)
+	    		showNewSimpleList();
+	    	if (this instanceof SimpleListItemActivity)
+	    		showNewSimpleListItem();
+	        return true;
 	    default:
 	        return super.onOptionsItemSelected(item);
 	    }

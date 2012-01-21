@@ -59,6 +59,7 @@ public class SimpleListActivity extends BaseSimpleListActivity  {
 		ListView lv = getListView();
 		lv.setTextFilterEnabled(true);
 		
+		// Doesn't seem to work?
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

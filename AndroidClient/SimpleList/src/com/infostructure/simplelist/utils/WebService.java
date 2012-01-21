@@ -29,7 +29,9 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
+import com.cedarsoftware.util.io.JsonWriter;
 import com.google.gson.Gson;
+import com.infostructure.simplelist.model.dto.JsonSerialisable;
 
 public class WebService{
 
@@ -45,7 +47,7 @@ public class WebService{
     String webServiceUrl;
 
     //The serviceName should be the name of the Service you are going to be using.
-    public WebService(String serviceName){
+    public WebService(String serviceName) {
         HttpParams myParams = new BasicHttpParams();
 
         HttpConnectionParams.setConnectionTimeout(myParams, 10000);
@@ -56,29 +58,22 @@ public class WebService{
 
     }
 
-    //Use this method to do a HttpPost\WebInvoke on a Web Service
-    public String webInvoke(String methodName, Map<String, Object> params) {
+    // POST
+    // Use this method to do a HttpPost on a Web Service.
+    public String webInvoke(String methodName, Map<String, String> params, JsonSerialisable data) {
 
-    	JSONObject jsonObject = new JSONObject();
-
-    	for (Map.Entry<String, Object> param : params.entrySet()){
-    		try {
-    			jsonObject.put(param.getKey(), param.getValue());
-			}
-    		catch (JSONException e) {
-    			Log.e("Groshie", "JSONException : "+e);
-			}
-    	}
-        return webInvoke(methodName, jsonObject.toString(), "application/json");
+    	String json = (data == null ? "" : data.serialiseToJson());
+        return webInvoke(methodName, json, getQueryString(params), "application/json");
     }
 
     // POST
-    private String webInvoke(String methodName, String data, String contentType) {
+    private String webInvoke(String methodName, String data, String queryString, String contentType) {
+    	
         ret = null;
 
         httpClient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.RFC_2109);
 
-        httpPost = new HttpPost(webServiceUrl + methodName);
+        httpPost = new HttpPost(webServiceUrl + methodName + queryString);
         response = null;
 
         StringEntity tmp = null;        
@@ -93,14 +88,14 @@ public class WebService{
         }
 
         try {
-            tmp = new StringEntity(data,"UTF-8");
+            tmp = new StringEntity(data, "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            Log.e("Groshie", "HttpUtils : UnsupportedEncodingException : "+e);
+            Log.e("Groshie", "HttpUtils : UnsupportedEncodingException : " + e);
         }
 
         httpPost.setEntity(tmp);
 
-        Log.d("Groshie", webServiceUrl + "?" + data);
+        Log.d("Groshie", webServiceUrl + "&" + data);
 
         try {
             response = httpClient.execute(httpPost, localContext);
@@ -115,33 +110,66 @@ public class WebService{
         return ret;
     }
 
+    // PUT
+    // Use this method to do a HttpPut on a Web Service.
+    public String webPut(String methodName, Map<String, String> params, JsonSerialisable data) {
+    	
+    	String json = (data == null ? "" : data.serialiseToJson());
+        return webPut(methodName, json, getQueryString(params), "application/json");
+    }
+
+    // PUT
+    private String webPut(String methodName, String data, String queryString, String contentType) {
+    	
+        ret = null;
+
+        httpClient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.RFC_2109);
+
+        httpPut = new HttpPut(webServiceUrl + methodName + queryString);
+        response = null;
+
+        StringEntity tmp = null;        
+
+        //httpPost.setHeader("User-Agent", "SET YOUR USER AGENT STRING HERE");
+        httpPut.setHeader("Accept", "text/html,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5");
+
+        if (contentType != null) {
+        	httpPut.setHeader("Content-Type", contentType);
+        } else {
+        	httpPut.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        }
+
+        try {
+            tmp = new StringEntity(data, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            Log.e("Groshie", "HttpUtils : UnsupportedEncodingException : " + e);
+        }
+
+        httpPut.setEntity(tmp);
+
+        Log.d("Groshie", webServiceUrl + "&" + data);
+
+        try {
+            response = httpClient.execute(httpPut, localContext);
+
+            if (response != null) {
+                ret = EntityUtils.toString(response.getEntity());
+            }
+        } catch (Exception e) {
+            Log.e("Groshie", "HttpUtils: " + e);
+        }
+
+        return ret;
+    }
+    
     // GET
-    //Use this method to do a HttpGet/WebGet on the web service
+    // Use this method to do a HttpGet/WebGet on the web service
     public String webGet(String methodName, Map<String, String> params) {
-    	String getUrl = webServiceUrl + methodName;
+    	
+    	String url = webServiceUrl + methodName + getQueryString(params); 	
 
-    	int i = 0;
-    	for (Map.Entry<String, String> param : params.entrySet())
-    	{
-    		if(i == 0){
-    			getUrl += "?";
-    		}
-    		else{
-    			getUrl += "&";
-    		}
-
-    		try {
-				getUrl += param.getKey() + "=" + URLEncoder.encode(param.getValue(),"UTF-8");
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-    		i++;
-    	}
-
-        httpGet = new HttpGet(getUrl);
-        Log.e("WebGetURL: ",getUrl);
+        httpGet = new HttpGet(url);
+        Log.e("WebGetURL: ",url);
 
         try {
             response = httpClient.execute(httpGet);
@@ -158,57 +186,57 @@ public class WebService{
 
         return ret;
     }
+    
+    // DELETE
+    // Use this method to do a HttpGet/WebGet on the web service
+    public String webDelete(String methodName, Map<String, String> params) {
+    	
+    	String url = webServiceUrl + methodName + getQueryString(params); 	
 
-    public static JSONObject Object(Object o){
-    	try {
-			return new JSONObject(new Gson().toJson(o));
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-		return null;
-    }
+        httpDelete = new HttpDelete(url);
+        Log.e("WebDeleteURL: ",url);
 
-    public InputStream getHttpStream(String urlString) throws IOException {
-        InputStream in = null;
-        int response = -1;
-
-        URL url = new URL(urlString);
-        URLConnection conn = url.openConnection();
-
-        if (!(conn instanceof HttpURLConnection))
-            throw new IOException("Not an HTTP connection");
-
-        try{
-            HttpURLConnection httpConn = (HttpURLConnection) conn;
-            httpConn.setAllowUserInteraction(false);
-            httpConn.setInstanceFollowRedirects(true);
-            httpConn.setRequestMethod("GET");
-            httpConn.connect(); 
-
-            response = httpConn.getResponseCode();                 
-
-            if (response == HttpURLConnection.HTTP_OK) {
-                in = httpConn.getInputStream();
-            }
-        } catch (Exception e) {
-            throw new IOException("Error connecting");
-        } // end try-catch
-
-        return in;
-    }
-
-    public void clearCookies() {
-        httpClient.getCookieStore().clear();
-    }
-
-    public void abort() {
         try {
-            if (httpClient != null) {
-                System.out.println("Abort.");
-                httpPost.abort();
-            }
+            response = httpClient.execute(httpDelete);
         } catch (Exception e) {
-            System.out.println("Your App Name Here" + e);
+            Log.e("Groshie:", e.getMessage());
         }
+
+        // we assume that the response body contains the error message
+        try {
+            ret = EntityUtils.toString(response.getEntity());
+        } catch (IOException e) {
+            Log.e("Groshie:", e.getMessage());
+        }
+
+        return ret;
+    }
+    
+    // Get the query string for this request.
+    private String getQueryString(Map<String, String> params) {   
+    	
+    	String queryString = "";
+    	
+    	int i = 0;
+    	for (Map.Entry<String, String> param : params.entrySet())
+    	{
+    		if(i == 0){
+    			queryString += "?";
+    		}
+    		else{
+    			queryString += "&";
+    		}
+
+    		try {
+    			queryString += param.getKey() + "=" + URLEncoder.encode(param.getValue(),"UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+    		i++;
+    	}
+    	
+    	return queryString;
     }
 }

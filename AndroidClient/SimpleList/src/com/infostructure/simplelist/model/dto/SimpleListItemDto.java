@@ -1,15 +1,20 @@
 package com.infostructure.simplelist.model.dto;
 
-public class SimpleListItemDto {
+public class SimpleListItemDto extends WrappableDto implements JsonSerialisable {
 
+	public SimpleListItemDto() {
+		this.wrapName = "simpleListItemViewModel";
+	}
+	
 	public int ID;
 	public String Description;
 	public boolean Done;
 	public int SimpleListID;
 
 	@Override
-	public String toString()
-	{
-		return "List Item ID: " + ID + " Description: " + Description;
+	public String serialiseToJson() {
+		return this.wrapped
+			? "{\"" + this.wrapName + "\":{\"Description\":\"" + this.Description + "\",\"SimpleListID\":" + this.SimpleListID + "}}"
+			: "{\"Description\":\"" + this.Description + "\",\"SimpleListID\":" + this.SimpleListID + "}";
 	}
 }

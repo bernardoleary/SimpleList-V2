@@ -26,17 +26,20 @@ public class DataAccess {
 	
 	/* == */
 	/* TEST */
-	//private final String URL = "http://10.0.2.2:5900/";
+	private final String URL = "http://10.0.2.2:5900/ApiService";
 	/* == */
 	/* PROD */
 	/* == */
-	private final String URL = "http://www.infostructure.co.nz/SimpleList/";
+	//private final String URL = "http://www.infostructure.co.nz/SimpleList/ApiService";
 	/* == */
 	
+	private final String FORWARD_SLASH = "/";
 	private final String SIMPLE_LIST = "SimpleList";
-	private final String SIMPLE_LIST_ITEM = "SimpleListItem";
-	private final String SIMPLE_LIST_ITEM_TOGGLE_DONE = SIMPLE_LIST_ITEM + "/ToggleDone";
-	private final String FILENAME = "settings";
+	private final String SIMPLE_LIST_ITEM = "SimpleListItem";	
+	private final String SETTINGS_FILE_NAME = "settings";
+	private final String POPULATE_SUB_STRUCTURES = "populateSubStructures";
+	private final String USER_NAME = "userName";
+	private final String PASSWORD = "password";
 	private Context applicationContext = null;
 	private Mapper mapper = null;
 	
@@ -47,18 +50,12 @@ public class DataAccess {
 	
 	public List<SimpleList> getSimpleLists() throws Exception {
 		
-		// collect user credentials from external storage
-		UserCredentials credentials = getUserCredentials();
-		String userName = credentials.getUserName();
-		String password = credentials.getPassword();
-		
-		String simpleListUrl = URL + SIMPLE_LIST;
+		String simpleListUrl = URL + FORWARD_SLASH + SIMPLE_LIST;
 		WebService webService = new WebService(simpleListUrl);
 
 		//Pass the parameters if needed , if not then pass dummy one as follows
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("userName", userName);
-		params.put("password", password);
+		Map<String, String> params = getUserCredentialsHashMap();
+		params.put(POPULATE_SUB_STRUCTURES, "false");
 
 		//Get JSON response from server the "" are where the method name would normally go if needed example
 		String response = webService.webGet("", params);
@@ -79,29 +76,18 @@ public class DataAccess {
 
 	public List<SimpleListItem> getSimpleListItems(int simpleListId) throws Exception {
 		
-		// collect user credentials from external storage
-		UserCredentials credentials = getUserCredentials();
-		String userName = credentials.getUserName();
-		String password = credentials.getPassword();
-		
-		String simpleListUrl = URL + SIMPLE_LIST_ITEM;
+		String simpleListUrl = URL + FORWARD_SLASH + SIMPLE_LIST + FORWARD_SLASH + simpleListId;
 		WebService webService = new WebService(simpleListUrl);
 
-		//Pass the parameters if needed , if not then pass dummy one as follows
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("userName", userName);
-		params.put("password", password);
-		params.put("simpleListId", Integer.toString(simpleListId));
-
 		//Get JSON response from server the "" are where the method name would normally go if needed example
-		String response = webService.webGet("", params);
+		String response = webService.webGet("", getUserCredentialsHashMap());
 
 		try
 		{
 			//Parse Response into our object
-			Type collectionType = new TypeToken<List<SimpleListItemDto>>(){}.getType();
-			List<SimpleListItemDto> simpleListItemDtos = new Gson().fromJson(response, collectionType);
-			return mapper.SimpleListItemDtosToSimpleListItems(simpleListItemDtos);
+			Type collectionType = new TypeToken<SimpleListDto>(){}.getType();
+			SimpleListDto simpleListDto = new Gson().fromJson(response, collectionType);
+			return mapper.SimpleListItemDtosToSimpleListItems(simpleListDto.SimpleListItems);
 		}
 		catch(Exception e)
 		{
@@ -110,25 +96,51 @@ public class DataAccess {
 		}
 	}
 
+	public String createSimpleList(String name) throws Exception {
+		
+		String simpleListUrl = URL + FORWARD_SLASH + SIMPLE_LIST;
+		WebService webService = new WebService(simpleListUrl);
+		
+		// Pass data if needed.
+		SimpleListDto simpleListDto = new SimpleListDto();
+		simpleListDto.Name = name;
+		simpleListDto.setIsWrapped(false);
+		
+		//Get JSON response from server the "" are where the method name would normally go if needed example
+		return webService.webInvoke("", getUserCredentialsHashMap(), simpleListDto);
+	}
+	
+	public String createSimpleListItem(int simpleListId, String description) throws Exception {
+		
+		String simpleListUrl = URL + FORWARD_SLASH + SIMPLE_LIST + FORWARD_SLASH + simpleListId + FORWARD_SLASH + SIMPLE_LIST_ITEM;
+		WebService webService = new WebService(simpleListUrl);
+		
+		// Pass data if needed.
+		SimpleListItemDto simpleListItemDto = new SimpleListItemDto();
+		simpleListItemDto.SimpleListID = simpleListId;
+		simpleListItemDto.Description = description;
+		simpleListItemDto.setIsWrapped(true);
+		
+		//Get JSON response from server the "" are where the method name would normally go if needed example
+		return webService.webInvoke("", getUserCredentialsHashMap(), simpleListItemDto);
+	}
+
 	public String toggleSimpleListItemDone(int simpleListId, int simpleListItemId) throws Exception {
 		
-		// collect user credentials from external storage
-		UserCredentials credentials = getUserCredentials();
-		String userName = credentials.getUserName();
-		String password = credentials.getPassword();
-		
-		String simpleListUrl = URL + SIMPLE_LIST_ITEM_TOGGLE_DONE;
+		String simpleListUrl = URL + FORWARD_SLASH + SIMPLE_LIST + FORWARD_SLASH + simpleListId + FORWARD_SLASH + SIMPLE_LIST_ITEM + FORWARD_SLASH + simpleListItemId;
 		WebService webService = new WebService(simpleListUrl);
 
-		//Pass the parameters if needed , if not then pass dummy one as follows
-		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("userName", userName);
-		params.put("password", password);
-		params.put("simpleListId", simpleListId);
-		params.put("simpleListItemId", simpleListItemId);
+		//Get JSON response from server the "" are where the method name would normally go if needed example
+		return webService.webPut("", getUserCredentialsHashMap(), null);
+	}
+	
+	public String deleteSimpleListItem(int simpleListId, int simpleListItemId) throws Exception {
+		
+		String simpleListUrl = URL + FORWARD_SLASH + SIMPLE_LIST + FORWARD_SLASH + simpleListId + FORWARD_SLASH + SIMPLE_LIST_ITEM + FORWARD_SLASH + simpleListItemId;
+		WebService webService = new WebService(simpleListUrl);
 
 		//Get JSON response from server the "" are where the method name would normally go if needed example
-		return webService.webInvoke("", params);
+		return webService.webDelete("", getUserCredentialsHashMap());
 	}
 	
 	public UserCredentials getUserCredentials() throws Exception {
@@ -137,7 +149,7 @@ public class DataAccess {
 		byte[] buffer = new byte[1000];
 		FileInputStream fileInputStream = null;
 		try {
-			fileInputStream = applicationContext.openFileInput(FILENAME);
+			fileInputStream = applicationContext.openFileInput(SETTINGS_FILE_NAME);
 			fileInputStream.read(buffer);
 		} finally {		
 			if (fileInputStream != null)
@@ -157,11 +169,26 @@ public class DataAccess {
 		// set the credentials and store them
 		FileOutputStream fileOutputStream = null;
 		try {
-			fileOutputStream = applicationContext.openFileOutput(FILENAME, Context.MODE_PRIVATE);
+			fileOutputStream = applicationContext.openFileOutput(SETTINGS_FILE_NAME, Context.MODE_PRIVATE);
 			fileOutputStream.write((userCredentials.getUserName() + "\n" + userCredentials.getPassword() + "\n").getBytes());
 		} finally {		
 			if (fileOutputStream != null)
 				fileOutputStream.close();
 		}
+	}
+	
+	private Map<String, String> getUserCredentialsHashMap() throws Exception {
+		
+		// collect user credentials from external storage
+		UserCredentials credentials = getUserCredentials();
+		String userName = credentials.getUserName();
+		String password = credentials.getPassword();
+		
+		// Pass the parameters if needed , if not then pass dummy one as follows
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(USER_NAME, userName);
+		params.put(PASSWORD, password);
+		
+		return params;
 	}
 }

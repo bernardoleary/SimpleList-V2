@@ -7,4 +7,7 @@
     <string name="password">Password:</string>
     <string name="refresh">Refresh</string>
     <string name="simple_list_items">Simple List Items</string>
+    <string name="new_thing">New</string>
+    <string name="list_name">List Name</string>
+    <string name="list_item_description">List Item Description</string>
 </resources>
