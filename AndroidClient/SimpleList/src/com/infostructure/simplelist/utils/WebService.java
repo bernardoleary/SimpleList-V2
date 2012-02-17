@@ -29,7 +29,6 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
-import com.cedarsoftware.util.io.JsonWriter;
 import com.google.gson.Gson;
 import com.infostructure.simplelist.model.dto.JsonSerialisable;
 
