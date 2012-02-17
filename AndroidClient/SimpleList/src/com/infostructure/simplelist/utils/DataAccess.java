@@ -9,6 +9,7 @@ import java.util.Map;
 import java.lang.String;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -26,13 +27,14 @@ public class DataAccess {
 	
 	/* == */
 	/* TEST */
-	private final String URL = "http://10.0.2.2:5900/ApiService";
+	//private final String URL = "http://10.0.2.2:5900/ApiService";
 	/* == */
 	/* PROD */
 	/* == */
-	//private final String URL = "http://www.infostructure.co.nz/SimpleList/ApiService";
+	private final String URL = "http://www.smplifi.com/ApiService";
 	/* == */
 	
+	private final String PREFS_FILE_NAME = "prefs";
 	private final String FORWARD_SLASH = "/";
 	private final String SIMPLE_LIST = "SimpleList";
 	private final String SIMPLE_LIST_ITEM = "SimpleListItem";	
@@ -144,7 +146,15 @@ public class DataAccess {
 	}
 	
 	public UserCredentials getUserCredentials() throws Exception {
-		
+	
+		// set user credentials and return
+		UserCredentials userCredentials = new UserCredentials();
+		SharedPreferences settings = this.applicationContext.getSharedPreferences(PREFS_FILE_NAME, 0);
+		userCredentials.setUserName(settings.getString("userName", ""));
+		userCredentials.setPassword(settings.getString("password", ""));
+		return userCredentials;
+       
+       /*
 		// read the file in
 		byte[] buffer = new byte[1000];
 		FileInputStream fileInputStream = null;
@@ -162,10 +172,21 @@ public class DataAccess {
 		userCredentials.setUserName(credentials.split("\n")[0]);
 		userCredentials.setPassword(credentials.split("\n")[1]);
 		return userCredentials;
+		*/
 	}
 	
 	public void setUserCredentials(UserCredentials userCredentials) throws Exception {
 		
+		// We need an Editor object to make preference changes.
+		SharedPreferences settings = this.applicationContext.getSharedPreferences(PREFS_FILE_NAME, 0);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putString("userName", userCredentials.getUserName());
+		editor.putString("password", userCredentials.getPassword());
+		
+		// Commit the edits!
+		editor.commit();
+		
+		/*
 		// set the credentials and store them
 		FileOutputStream fileOutputStream = null;
 		try {
@@ -175,6 +196,7 @@ public class DataAccess {
 			if (fileOutputStream != null)
 				fileOutputStream.close();
 		}
+		*/
 	}
 	
 	private Map<String, String> getUserCredentialsHashMap() throws Exception {
