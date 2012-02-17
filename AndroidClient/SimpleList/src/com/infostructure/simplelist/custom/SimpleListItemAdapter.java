@@ -85,6 +85,32 @@ public class SimpleListItemAdapter extends ArrayAdapter<SimpleListItem> {
 		if (!simpleListItem.getDone())
 			buttonHide.setVisibility(View.INVISIBLE);
 		
+		//Capture the button that has been clicked
+		Button buttonDelete = (Button)simpleListItemView.findViewById(R.id.buttonDelete);
+		buttonDelete.setOnClickListener(new OnClickListener() {
+	        @Override
+	        public void onClick(View v) {
+	        	
+	        	//Get the component we're working with
+	        	RelativeLayout relativeLayout = (RelativeLayout)v.getParent().getParent();	 
+	        	
+	        	try {
+	        		
+		        	//Update the database
+	        		TextView textViewDescription = (TextView)relativeLayout.findViewById(R.id.textViewDescription);
+	        		SimpleListItem item = getSimpleListItem(textViewDescription);
+	        		dataAccess.deleteSimpleListItem(item.getSimpleListID(), item.getId());
+					
+					//Redraw       		        	
+		        	ViewGroup viewGroup = (ViewGroup)relativeLayout.getParent();
+		        	viewGroup.invalidate();	  
+	        	
+				} catch (Exception e) {
+					Log.d("Error: ", e.toString());
+				}
+	        }
+	    });
+		
 		//Capture the button that has been toggled
 		CheckBox checkboxDone = (CheckBox)simpleListItemView.findViewById(R.id.checkboxDone);
 		checkboxDone.setChecked(simpleListItem.getDone());		
@@ -98,13 +124,9 @@ public class SimpleListItemAdapter extends ArrayAdapter<SimpleListItem> {
 	        	try {
 	        		
 		        	//Update the database
-		        	TextView textViewDescription = (TextView)relativeLayout.findViewById(R.id.textViewDescription);	        	
-		        	SimpleListItem item = null;
-		        	for (int i = 0; item == null; i++) 
-		        		item = items.get(i).getDescription() == textViewDescription.getText() ? 
-		        			items.get(i) :
-		        			null;
-					dataAccess.toggleSimpleListItemDone(item.getSimpleListID(), item.getId());
+	        		TextView textViewDescription = (TextView)relativeLayout.findViewById(R.id.textViewDescription);
+	        		SimpleListItem item = getSimpleListItem(textViewDescription);
+	        		dataAccess.toggleSimpleListItemDone(item.getSimpleListID(), item.getId());
 					
 					//Toggle Hide button's visibility
 					CheckBox checkboxDone = (CheckBox)relativeLayout.findViewById(R.id.checkboxDone);					
@@ -122,5 +144,14 @@ public class SimpleListItemAdapter extends ArrayAdapter<SimpleListItem> {
 	    });
 		
 		return simpleListItemView;
+	}
+	
+	private SimpleListItem getSimpleListItem(TextView textView) {    		        	
+    	SimpleListItem item = null;
+    	for (int i = 0; item == null; i++) 
+    		item = items.get(i).getDescription() == textView.getText() ? 
+    			items.get(i) :
+    			null;
+		return item;
 	}
 }
