@@ -19,52 +19,52 @@ namespace Infostructure.SimpleList.Web.Services
     public interface IApiService
     {
         [WebGet(
-            UriTemplate = "SimpleList/{simpleListId}",
+            UriTemplate = "SimpleList/{simpleListId}?userName={userName}&password={password}",
             ResponseFormat = System.ServiceModel.Web.WebMessageFormat.Json,
             RequestFormat = System.ServiceModel.Web.WebMessageFormat.Json)]
-        SimpleListViewModel GetSimpleList(string simpleListId);
+        SimpleListViewModel GetSimpleList(string userName, string password, string simpleListId);
 
         [WebGet(
-            UriTemplate = "SimpleList?populateSubStructures={populateSubStructures}",
+            UriTemplate = "SimpleList?userName={userName}&password={password}&populateSubStructures={populateSubStructures}",
             ResponseFormat = System.ServiceModel.Web.WebMessageFormat.Json,
             RequestFormat = System.ServiceModel.Web.WebMessageFormat.Json)]
-        IEnumerable<Models.SimpleListViewModel> GetSimpleLists(string populateSubStructures);
+        IEnumerable<Models.SimpleListViewModel> GetSimpleLists(string userName, string password, string populateSubStructures);
 
         [WebInvoke(
-            UriTemplate = "SimpleList",
+            UriTemplate = "SimpleList?userName={userName}&password={password}",
             Method = "POST",
             ResponseFormat = System.ServiceModel.Web.WebMessageFormat.Json,
             RequestFormat = System.ServiceModel.Web.WebMessageFormat.Json)]
-        int CreateSimpleList(SimpleListViewModel simpleListViewModel);
+        int CreateSimpleList(string userName, string password, SimpleListViewModel simpleListViewModel);
 
         [WebInvoke(
-            UriTemplate = "SimpleList/{simpleListId}/SimpleListItem",
+            UriTemplate = "SimpleList/{simpleListId}/SimpleListItem?userName={userName}&password={password}",
             Method = "POST",
             ResponseFormat = System.ServiceModel.Web.WebMessageFormat.Json,
             RequestFormat = System.ServiceModel.Web.WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
-        int CreateSimpleListItem(string simpleListId, SimpleListItemViewModel simpleListItemViewModel);
+        int CreateSimpleListItem(string userName, string password, string simpleListId, SimpleListItemViewModel simpleListItemViewModel);
 
         [WebInvoke(
-            UriTemplate = "SimpleList/{simpleListId}/SimpleListItem/{simpleListItemId}", 
+            UriTemplate = "SimpleList/{simpleListId}/SimpleListItem/{simpleListItemId}?userName={userName}&password={password}", 
             Method = "DELETE",
             ResponseFormat = System.ServiceModel.Web.WebMessageFormat.Json,
             RequestFormat = System.ServiceModel.Web.WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
-        int DeleteSimpleListItem(string simpleListId, string simpleListItemId);
+        int DeleteSimpleListItem(string userName, string password, string simpleListId, string simpleListItemId);
 
         [WebInvoke(
-            UriTemplate = "SimpleList/{simpleListId}", 
+            UriTemplate = "SimpleList/{simpleListId}?userName={userName}&password={password}", 
             Method = "DELETE",
             ResponseFormat = System.ServiceModel.Web.WebMessageFormat.Json,
             RequestFormat = System.ServiceModel.Web.WebMessageFormat.Json)]
-        int DeleteSimpleList(string simpleListId);
+        int DeleteSimpleList(string userName, string password, string simpleListId);
 
         [WebInvoke(
-            UriTemplate = "SimpleList/{simpleListId}/SimpleListItem/{simpleListItemId}", 
+            UriTemplate = "SimpleList/{simpleListId}/SimpleListItem/{simpleListItemId}?userName={userName}&password={password}", 
             Method = "PUT",
             ResponseFormat = System.ServiceModel.Web.WebMessageFormat.Json,
             RequestFormat = System.ServiceModel.Web.WebMessageFormat.Json)]
-        int ToggleDone(string simpleListId, string simpleListItemId);
+        int ToggleDone(string userName, string password, string simpleListId, string simpleListItemId);
     }
 }

@@ -9,37 +9,44 @@ namespace Infostructure.SimpleList.Web.Services
     /// <summary>
     /// This part of the partial class is used as a wrapper for the methods that do the actual work.
     /// It allows us to implement a "proper" RESTful interface from the service front-end.
+    /// All this really does actually is allow us to put the UID and PW as part of the "help" page that .NET provide.
+    /// Goes against the Code Complete principle of programming "into" a language to some extent, but there's a benefit.
     /// </summary>
     public partial class ApiService : IApiService
     {
-        public Models.SimpleListViewModel GetSimpleList(string simpleListId)
+        public Models.SimpleListViewModel GetSimpleList(string userName, string password, string simpleListId)
         {
             return GetSimpleList(int.Parse(simpleListId));
         }
 
-        public IEnumerable<Models.SimpleListViewModel> GetSimpleLists(string populateSubStructures)
+        public IEnumerable<Models.SimpleListViewModel> GetSimpleLists(string userName, string password, string populateSubStructures)
         {
             return GetSimpleLists(bool.Parse(populateSubStructures));
         }
 
-        public int CreateSimpleListItem(string simpleListId, Models.SimpleListItemViewModel simpleListItemViewModel)
+        public int CreateSimpleListItem(string userName, string password, string simpleListId, Models.SimpleListItemViewModel simpleListItemViewModel)
         {
             return CreateSimpleListItem(simpleListItemViewModel);
         }
 
-        public int DeleteSimpleListItem(string simpleListId, string simpleListItemId)
+        public int DeleteSimpleListItem(string userName, string password, string simpleListId, string simpleListItemId)
         {
             return DeleteSimpleListItem(int.Parse(simpleListItemId));
         }
 
-        public int DeleteSimpleList(string simpleListItemId)
+        public int DeleteSimpleList(string userName, string password, string simpleListItemId)
         {
             return DeleteSimpleList(int.Parse(simpleListItemId));
         }
 
-        public int ToggleDone(string simpleListId, string simpleListItemId)
+        public int ToggleDone(string userName, string password, string simpleListId, string simpleListItemId)
         {
             return ToggleDone(int.Parse(simpleListItemId));
+        }
+
+        public int CreateSimpleList(string userName, string password, Models.SimpleListViewModel simpleListViewModel)
+        {
+            return CreateSimpleList(simpleListViewModel);
         }
     }
 }
