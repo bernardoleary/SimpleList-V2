@@ -6,11 +6,13 @@ import com.infostructure.simplelist.model.UserCredentials;
 import com.infostructure.simplelist.utils.DataAccess;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SettingsActivity extends Activity implements UserInterface {
 	
@@ -54,6 +56,14 @@ public class SettingsActivity extends Activity implements UserInterface {
 				userCrednetials.setPassword(editTextPassword.getText().toString());
 				try {
 					dataAccess.setUserCredentials(userCrednetials);
+					
+					Context context = getApplicationContext();
+					CharSequence text = "Settings saved...";
+					int duration = Toast.LENGTH_SHORT;
+
+					Toast toast = Toast.makeText(context, text, duration);
+					toast.show();
+					
 				} catch (Exception e) {
 					Log.d("Error: ", e.toString());
 					return;
