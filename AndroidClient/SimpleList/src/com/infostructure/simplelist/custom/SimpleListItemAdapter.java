@@ -101,9 +101,11 @@ public class SimpleListItemAdapter extends ArrayAdapter<SimpleListItem> {
 	        		SimpleListItem item = getSimpleListItem(textViewDescription);
 	        		dataAccess.deleteSimpleListItem(item.getSimpleListID(), item.getId());
 					
-					//Redraw       		        	
+		        	//Update the View so as we don't show that item anymore
+		        	//Need to go two levels up because of the layout structure      		        	
 		        	ViewGroup viewGroup = (ViewGroup)relativeLayout.getParent();
-		        	viewGroup.invalidate();	  
+		        	viewGroup.removeView(relativeLayout);
+		        	viewGroup.invalidate();	     
 	        	
 				} catch (Exception e) {
 					Log.d("Error: ", e.toString());
