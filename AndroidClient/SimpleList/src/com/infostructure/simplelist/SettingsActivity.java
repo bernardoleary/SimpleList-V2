@@ -58,7 +58,7 @@ public class SettingsActivity extends Activity implements UserInterface {
 					dataAccess.setUserCredentials(userCrednetials);
 					
 					Context context = getApplicationContext();
-					CharSequence text = "Settings saved...";
+					CharSequence text = "Settings Saved...";
 					int duration = Toast.LENGTH_SHORT;
 
 					Toast toast = Toast.makeText(context, text, duration);
