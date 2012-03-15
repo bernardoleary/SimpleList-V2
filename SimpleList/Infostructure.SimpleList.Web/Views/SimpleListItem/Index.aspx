@@ -8,53 +8,27 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>ListItems</h2>
+    <h4>List Items</h4>
 
-    <table>
-        <tr>
-            <th></th>
-            <th>
-                ID
-            </th>
-            <th>
-                SimpleListID
-            </th>
-            <th>
-                Description
-            </th>
-            <th>
-                Done
-            </th>
-        </tr>
+    <h4><%= Html.ActionLink<SimpleListItemController>(c => c.Create(Model.ID), "Create New Item") %></h4>
+
+    <div class="lines"></div>
+
+    <ul class="list">
 
     <% foreach (var item in Model.SimpleListItems) { %>
     
-        <tr>
-            <td>
-                <%: Html.ActionLink<SimpleListItemController>(c => c.ToggleDone(Model.ID, item.ID), "Toggle Done")%> |       
-                <!-- <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })%> | -->
-                <%: Html.ActionLink<SimpleListItemController>(c => c.Delete(Model.ID, item.ID), "Delete")%>
-            </td>
-            <td>
-                <%: item.ID %>
-            </td>
-            <td>
-                <%: item.SimpleListID %>
-            </td>
-            <td>
-                <%: item.Description %>
-            </td>
-            <td>
-                <%: item.Done %>
-            </td>
-        </tr>
+        <li>
+        <%: Html.ActionLink<SimpleListItemController>(c => c.ToggleDone(Model.ID, item.ID), "Toggle Done")%> -   
+        <%: Html.ActionLink<SimpleListItemController>(c => c.Delete(Model.ID, item.ID), "Delete")%> - 
+        <%: item.Description %> - 
+        <%: item.Done %> - 
+        </li>
     
     <% } %>
 
-    </table>
+    </ul>
 
-    <p>
-        <%= Html.ActionLink<SimpleListItemController>(c => c.Create(Model.ID), "Create New Item") %>
-    </p>
+    
 
 </asp:Content>
