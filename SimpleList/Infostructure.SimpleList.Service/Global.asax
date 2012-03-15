@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="Infostructure.SimpleList.Service.Global" Language="C#" %>

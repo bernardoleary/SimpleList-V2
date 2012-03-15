@@ -1,0 +1,5 @@
+d:\WebApps\SimpleList\Infostructure.SimpleList.Service\bin\Infostructure.SimpleList.Service.dll
+d:\WebApps\SimpleList\Infostructure.SimpleList.Service\bin\Infostructure.SimpleList.Service.pdb
+d:\WebApps\SimpleList\Infostructure.SimpleList.Service\obj\Debug\ResolveAssemblyReference.cache
+d:\WebApps\SimpleList\Infostructure.SimpleList.Service\obj\Debug\Infostructure.SimpleList.Service.dll
+d:\WebApps\SimpleList\Infostructure.SimpleList.Service\obj\Debug\Infostructure.SimpleList.Service.pdb
