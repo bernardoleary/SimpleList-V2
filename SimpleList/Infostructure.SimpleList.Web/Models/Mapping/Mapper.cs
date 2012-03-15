@@ -71,5 +71,27 @@ namespace Infostructure.SimpleList.Web.Models.Mapping
                 simpleListItemViewModels.Add(SimpleListToSimpleListViewModel(simpleList, populateSubStructures));
             return simpleListItemViewModels;
         }
+
+        public User UserViewModelToUser(UserViewModel userViewModel)
+        {
+            User user = new User();
+            user.ID = userViewModel.ID;
+            user.Name = userViewModel.Name;
+            user.Password = userViewModel.Password;
+            user.ShowDoneListItems = userViewModel.ShowDoneListItems;
+            user.ShowDoneLists = userViewModel.ShowDoneLists;
+            return user;
+        }
+
+        public UserViewModel UserToUserViewModel(User user)
+        {
+            UserViewModel userViewModel = new UserViewModel();
+            userViewModel.ID = user.ID;
+            userViewModel.Name = user.Name;
+            userViewModel.Password = user.Password;
+            userViewModel.ShowDoneListItems = user.ShowDoneListItems;
+            userViewModel.ShowDoneLists = user.ShowDoneLists;
+            return userViewModel;
+        } 
     }
 }
