@@ -12,32 +12,31 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Runtime.Serialization;
 
 namespace Infostructure.SimpleList.DataModel
 {
-    public partial class User : Infostructure.SimpleList.DataModel.IUser
+    public partial class User
     {
         #region Primitive Properties
-
+    
         public virtual int ID
         {
             get;
             set;
         }
-
+    
         public virtual string Name
         {
             get;
             set;
         }
-
+    
         public virtual string Password
         {
             get;
             set;
         }
-
+    
         public virtual string Email
         {
             get;
@@ -46,7 +45,7 @@ namespace Infostructure.SimpleList.DataModel
 
         #endregion
         #region Navigation Properties
-
+    
         public virtual ICollection<SimpleList> SimpleLists
         {
             get

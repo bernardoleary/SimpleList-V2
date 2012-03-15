@@ -1,0 +1,6 @@
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataModel\bin\Release\Infostructure.SimpleList.DataModel.dll.config
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataModel\bin\Release\Infostructure.SimpleList.DataModel.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataModel\bin\Release\Infostructure.SimpleList.DataModel.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataModel\obj\Release\ResolveAssemblyReference.cache
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataModel\obj\Release\Infostructure.SimpleList.DataModel.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.DataModel\obj\Release\Infostructure.SimpleList.DataModel.pdb

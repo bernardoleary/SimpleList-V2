@@ -12,20 +12,19 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Runtime.Serialization;
 
 namespace Infostructure.SimpleList.DataModel
 {
-    public partial class SimpleList : Infostructure.SimpleList.DataModel.ISimpleList
+    public partial class SimpleList
     {
         #region Primitive Properties
-
+    
         public virtual int ID
         {
             get;
             set;
         }
-
+    
         public virtual Nullable<int> UserID
         {
             get { return _userID; }
@@ -50,19 +49,19 @@ namespace Infostructure.SimpleList.DataModel
             }
         }
         private Nullable<int> _userID;
-
+    
         public virtual string Name
         {
             get;
             set;
         }
-
+    
         public virtual System.DateTime DateAdded
         {
             get;
             set;
         }
-
+    
         public virtual bool AllDone
         {
             get;
@@ -71,7 +70,7 @@ namespace Infostructure.SimpleList.DataModel
 
         #endregion
         #region Navigation Properties
-
+    
         public virtual User User
         {
             get { return _user; }
@@ -86,7 +85,7 @@ namespace Infostructure.SimpleList.DataModel
             }
         }
         private User _user;
-
+    
         public virtual ICollection<SimpleListItem> SimpleListItems
         {
             get

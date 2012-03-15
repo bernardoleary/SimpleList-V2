@@ -1,0 +1,9 @@
+D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\bin\Release\Infostructure.SimpleList.BusinessLogic.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\bin\Release\Infostructure.SimpleList.BusinessLogic.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\bin\Release\Infostructure.SimpleList.DataModel.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\bin\Release\Infostructure.SimpleList.Utilities.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\bin\Release\Infostructure.SimpleList.DataModel.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\bin\Release\Infostructure.SimpleList.Utilities.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\obj\Release\ResolveAssemblyReference.cache
+D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\obj\Release\Infostructure.SimpleList.BusinessLogic.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.BusinessLogic\obj\Release\Infostructure.SimpleList.BusinessLogic.pdb
