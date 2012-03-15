@@ -1,0 +1,1 @@
+How to make a notebook CSS: http://css-tricks.com/how-to-create-a-notebook-design-with-css/

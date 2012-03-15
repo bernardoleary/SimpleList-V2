@@ -24,6 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{
 		Resources\Omu.ValueInjecter.dll = Resources\Omu.ValueInjecter.dll
 		Resources\Omu.ValueInjecter.pdb = Resources\Omu.ValueInjecter.pdb
 		Resources\Omu.ValueInjecter.XML = Resources\Omu.ValueInjecter.XML
+		UsefulLinks.txt = UsefulLinks.txt
 	EndProjectSection
 EndProject
 Global
