@@ -1,0 +1,8 @@
+D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\bin\Release\Infostructure.SimpleList.Utilities.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\bin\Release\Infostructure.SimpleList.Utilities.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\bin\Release\Omu.ValueInjecter.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\bin\Release\Omu.ValueInjecter.pdb
+D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\bin\Release\Omu.ValueInjecter.xml
+D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\obj\Release\ResolveAssemblyReference.cache
+D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\obj\Release\Infostructure.SimpleList.Utilities.dll
+D:\WebApps\SimpleList\Infostructure.SimpleList.Utilities\obj\Release\Infostructure.SimpleList.Utilities.pdb
