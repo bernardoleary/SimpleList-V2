@@ -8,27 +8,21 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2><%: ViewData["Message"] %></h2>    
-
     <h2>Lists</h2>
+    
+    <p>
+        <%: Html.ActionLink<SimpleListController>(c => c.Create(), "Create New")%>
+    </p>
 
     <table>
         <tr>
-            <th></th>
-            <th>
-                ID
-            </th>
-            <th>
-                UserID
+            <th>            
             </th>
             <th>
                 Name
             </th>
             <th>
-                DateAdded
-            </th>
-            <th>
-                AllDone
+                Date Added
             </th>
         </tr>
 
@@ -36,34 +30,21 @@
     
         <tr>
             <td>
-                <!-- <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })%> | -->
-                <%: Html.ActionLink<SimpleListItemController>(c => c.Index(item.ID), "Details")%> |
-                <!-- <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })%> -->
-            </td>
-            <td>
-                <%: item.ID %>
-            </td>
-            <td>
-                <%: item.UserID %>
+                <a href='<%: Url.Action("Index", "SimpleListItem", new {simpleListId = item.ID}) %>' style="text-decoration: none; outline: none;">
+                    <img src='<%: Url.Content("../../Content/Images/Status/Details.png") %>'/> 
+                </a>  
             </td>
             <td>
                 <%: item.Name %>
             </td>
             <td>
-                <%: String.Format("{0:g}", item.DateAdded) %>
-            </td>
-            <td>
-                <%: item.AllDone %>
+                <%: String.Format("{0:d}", item.DateAdded) %>
             </td>
         </tr>
     
     <% } %>
 
     </table>
-
-    <p>
-        <%: Html.ActionLink<SimpleListController>(c => c.Create(), "Create New")%>
-    </p>
 
 </asp:Content>
 

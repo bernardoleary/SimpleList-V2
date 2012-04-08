@@ -8,27 +8,45 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h4>List Items</h4>
+    <h2>List Items for "<%= Html.Encode(Model.Name) %>" </h2>
 
-    <h4><%= Html.ActionLink<SimpleListItemController>(c => c.Create(Model.ID), "Create New Item") %></h4>
+    <p>
+        <%= Html.ActionLink<SimpleListItemController>(c => c.Create(Model.ID), "Create New Item") %>
+    </p>
 
-    <div class="lines"></div>
-
-    <ul class="list">
+    <table>
+        <tr>
+            <th>            
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
 
     <% foreach (var item in Model.SimpleListItems) { %>
     
-        <li>
-        <%: Html.ActionLink<SimpleListItemController>(c => c.ToggleDone(Model.ID, item.ID), "Toggle Done")%> -   
-        <%: Html.ActionLink<SimpleListItemController>(c => c.Delete(Model.ID, item.ID), "Delete")%> - 
-        <%: item.Description %> - 
-        <%: item.Done %> - 
-        </li>
+        <tr>
+            <td>
+                <% if(item.Done) { %>
+                    <a href='<%: Url.Action("ToggleDone", "SimpleListItem", new {simpleListId = item.SimpleListID, simpleListItemId = item.ID}) %>' style="text-decoration: none; outline: none;">
+                        <img src='<%: Url.Content("../../Content/Images/Status/Tick.png") %>'/> 
+                    </a>
+                <% } else { %>
+                    <a href='<%: Url.Action("ToggleDone", "SimpleListItem", new {simpleListId = item.SimpleListID, simpleListItemId = item.ID}) %>' style="text-decoration: none; outline: none;">
+                        <img src='<%: Url.Content("../../Content/Images/Status/NotDone.png") %>'/> 
+                    </a>
+                <% } %>
+                <a href='<%: Url.Action("Delete", "SimpleListItem", new {simpleListId = item.SimpleListID, simpleListItemId = item.ID}) %>' style="text-decoration: none; outline: none;">
+                    <img src='<%: Url.Content("../../Content/Images/Status/Cross.png") %>'/> 
+                </a>       
+            </td>
+            <td> 
+                <%: item.Description %>
+            </td>
+        </tr>
     
     <% } %>
 
-    </ul>
-
-    
+    </table>    
 
 </asp:Content>

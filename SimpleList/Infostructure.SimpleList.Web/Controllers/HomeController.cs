@@ -11,14 +11,27 @@ namespace Infostructure.SimpleList.Web.Controllers
     {
         public ActionResult Index()
         {
-            ViewData["Message"] = "Welcome to ASP.NET MVC!";
-
             return View();
         }
 
         public ActionResult About()
         {
             return View();
+        }
+
+        public ActionResult HowTo()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+        public ActionResult Error()
+        {
+            return View("Error");
         }
     }
 }

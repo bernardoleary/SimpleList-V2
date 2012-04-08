@@ -1,11 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	ForgotPassword
+	Contact
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <h2>ForgotPassword</h2>
-
+    <h2>Contact</h2>
+    <p>
+    	Easy - <a href="mailto:support@smplifi.com">support@smplifi.com</a>.
+    </p>
 </asp:Content>

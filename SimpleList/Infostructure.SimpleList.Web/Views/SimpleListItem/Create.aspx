@@ -8,14 +8,12 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>NewListItem</h2>
-
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
 
-        <fieldset>
-            <legend>Fields</legend>
-            
+        <fieldset> 
+            <legend>Create New List Item</legend>
+
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Description) %>
             </div>
@@ -25,7 +23,7 @@
             </div>
             
             <p>
-                <input type="submit" value="NewListItem" />
+                <input type="submit" value="Go!" />
             </p>
         </fieldset>
 

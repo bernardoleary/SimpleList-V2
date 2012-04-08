@@ -6,6 +6,12 @@
 
 <asp:Content ID="errorContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
-        Sorry, an error occurred while processing your request.
+        $^1#!
     </h2>
+    <p>
+    	<img src="../../Content/Images/Error/facepalm.jpg" />
+    </p>
+    <p>
+        ...an error occurred while processing your request.
+    </p>
 </asp:Content>

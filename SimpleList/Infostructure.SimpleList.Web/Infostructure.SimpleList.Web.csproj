@@ -101,7 +101,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SimpleListController.cs" />
     <Compile Include="Controllers\SimpleListItemController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Models\Mapping\Mapper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -120,15 +119,19 @@
     <Compile Include="Services\Service1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\List.css" />
+    <Content Include="Content\Images\Error\facepalm.jpg" />
+    <Content Include="Content\Images\Status\Cross.png" />
+    <Content Include="Content\Images\Status\Details.png" />
+    <Content Include="Content\Images\Status\NotDone.png" />
+    <Content Include="Content\Images\Status\Tick.png" />
     <Content Include="Global.asax" />
     <Content Include="Services\ApiService.svc" />
+    <Content Include="Views\Home\Contact.aspx" />
+    <Content Include="Views\Home\HowTo.aspx" />
     <Content Include="Views\SimpleListItem\Create.aspx" />
     <Content Include="Views\SimpleListItem\Index.aspx" />
     <Content Include="Views\SimpleList\Create.aspx" />
     <Content Include="Views\SimpleList\Index.aspx" />
-    <Content Include="Views\User\ForgotPassword.aspx" />
-    <Content Include="Views\User\UpdateDetails.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -178,6 +181,9 @@
       <Project>{2700C5A6-0835-4386-96C6-D096CF7675B3}</Project>
       <Name>Infostructure.SimpleList.DataModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\HowTo\Infostructure_SimpleListHowTo_V0.4_20120408.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -7,6 +7,24 @@
 <asp:Content ID="aboutContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>About</h2>
     <p>
-        Put content here.
+    	Hello there -
+    </p>
+    <p>
+        Welcome to SimpleList - a very simple, "to-do list" application. Please feel free to sign-up and use it as you see fit.
+    </p>
+    <p>
+	    Use it to keep track of things that you need to do, as a distributed shopping list, or whatever you like.
+    </p>
+    <p>
+    	The Android (2.2) client can be downloaded by going to <a href="http://www.smplifi.com/Client/SimpleList.apk" target="_blank">this link...</a>
+    </p>
+    <p>
+	    I welcome your feedback. Email it to me on <a href="mailto:support@smplifi.com">support@smplifi.com</a>.
+    </p>
+    <p>
+    	The app will continue to be developed and updated, for the foreseeable future. It is free for anyone to use.
+    </p>
+    <p>
+    	Enjoy!
     </p>
 </asp:Content>

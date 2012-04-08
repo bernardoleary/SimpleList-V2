@@ -5,12 +5,13 @@ to use a different color start by replacing all instances of
 ----------------------------------------------------------*/
 body
 {
-    background-color: #5c87b2;
-    font-size: .75em;
-    font-family: Verdana, Helvetica, Sans-Serif;
-    margin: 0;
-    padding: 0;
-    color: #696969;
+	background-color: #C0C0C0;
+	font-size: .75em;
+	font-family: 'Courier New' , Courier, monospace;
+	color: #696969;
+	width: 600px;
+	margin: 0 auto;
+	padding: 0;
 }
 
 a:link
@@ -42,9 +43,9 @@ p, ul
 ----------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6
 {
-    font-size: 1.5em;
-    color: #000;
-    font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.5em;
+	color: #000;
+	font-family: 'Courier New' , Courier, monospace;
 }
 
 h1
@@ -105,16 +106,19 @@ page width. Or, you can specify an exact pixel width. */
     color: #fff;
     border: none;
     line-height: 2em;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 32px !important;
+    font-family: 'Courier New' , Courier, monospace;
+    font-size: 30px !important;
 }
 
 #main
 {
-    padding: 30px 30px 15px 30px;
-    background-color: #fff;
-    margin-bottom: 30px;
-    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+	border-style: dashed;
+	padding: 30px 30px 15px 30px;
+	background-color: #fff;
+	margin-bottom: 30px;
+	_height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+	-moz-border-radius: 15px;
+	border-radius: 15px;
 }
 
 #footer
@@ -131,8 +135,7 @@ page width. Or, you can specify an exact pixel width. */
 ----------------------------------------------------------*/
 ul#menu
 {
-    border-bottom: 1px #5C87B2 solid;
-    padding: 0 0 2px;
+    padding: 0 0 5px;
     position: relative;
     margin: 0;
     text-align: right;
@@ -155,12 +158,14 @@ ul#menu li#greeting
 
 ul#menu li a
 {
-    padding: 10px 20px;
-    font-weight: bold;
-    text-decoration: none;
-    line-height: 2.8em;
-    background-color: #e8eef4;
-    color: #034af3;
+	padding: 10px 15px;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 2.8em;
+	background-color: #CCFF99;
+	color: #0000CC;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 ul#menu li a:hover
