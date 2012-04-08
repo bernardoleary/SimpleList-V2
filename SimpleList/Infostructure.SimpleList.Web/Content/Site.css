@@ -107,7 +107,7 @@ page width. Or, you can specify an exact pixel width. */
     border: none;
     line-height: 2em;
     font-family: 'Courier New' , Courier, monospace;
-    font-size: 30px !important;
+    font-size: 32px !important;
 }
 
 #main

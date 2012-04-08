@@ -12,31 +12,29 @@
 
         <div id="header">
             <div id="title">
-                <h1>Simple List</h1>         
-            </div>
+                <h1>Simple List</h1>(Beta)
+            </div>            
               
             <div id="logindisplay">
                 <% Html.RenderPartial("LogOnUserControl"); %>
             </div> 
             
             <div id="menucontainer">
-            
                 <ul id="menu">              
                     <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
                     <li><%: Html.ActionLink("About", "About", "Home")%></li>
                     <li><%: Html.ActionLink("How To", "HowTo", "Home")%></li>
                     <li><%: Html.ActionLink("Contact", "Contact", "Home")%></li>
                 </ul>
-            
-            </div>
-        </div>
+            </div>            
+        </div>        
 
         <div id="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
 
             <div id="footer">
             </div>
-        </div>
-    </div>
+        </div>        
+    </div>    
 </body>
 </html>
