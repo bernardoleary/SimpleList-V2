@@ -130,6 +130,7 @@
     <Content Include="Views\Home\HowTo.aspx" />
     <Content Include="Views\SimpleListItem\Create.aspx" />
     <Content Include="Views\SimpleListItem\Index.aspx" />
+    <Content Include="Views\SimpleList\Clone.aspx" />
     <Content Include="Views\SimpleList\Create.aspx" />
     <Content Include="Views\SimpleList\Index.aspx" />
     <Content Include="Web.config">

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
+<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="aboutTitle" ContentPlaceHolderID="TitleContent" runat="server">
     About Us
@@ -16,7 +16,7 @@
 	    Use it to keep track of things that you need to do, as a distributed shopping list, or whatever you like.
     </p>
     <p>
-    	The Android (2.2) client can be downloaded by going to <a href="http://www.smplifi.com/Client/SimpleList.apk" target="_blank">this link...</a>
+    	The Android (2.2) client can be downloaded by going to <a href="https://play.google.com/store/apps/details?id=com.infostructure.simplelist" target="_blank">this link...</a>
     </p>
     <p>
 	    I welcome your feedback. Email it to me on <a href="mailto:support@smplifi.com">support@smplifi.com</a>.

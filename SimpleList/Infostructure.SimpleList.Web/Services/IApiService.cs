@@ -18,6 +18,13 @@ namespace Infostructure.SimpleList.Web.Services
     // NOTE: If the service is renamed, remember to update the global.asax.cs file
     public interface IApiService
     {
+        [WebInvoke(
+            UriTemplate = "SimpleList/{simpleListIdOriginal}?userName={userName}&password={password}&simpleListNameNew={simpleListNameNew}",
+            Method = "POST",
+            ResponseFormat = System.ServiceModel.Web.WebMessageFormat.Json,
+            RequestFormat = System.ServiceModel.Web.WebMessageFormat.Json)]
+        int CloneSimpleList(string userName, string password, string simpleListIdOriginal, string simpleListNameNew, string includeDoneSimpleListItems);
+
         [WebGet(
             UriTemplate = "SimpleList/{simpleListId}?userName={userName}&password={password}",
             ResponseFormat = System.ServiceModel.Web.WebMessageFormat.Json,

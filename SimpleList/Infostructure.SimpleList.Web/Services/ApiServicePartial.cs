@@ -14,6 +14,11 @@ namespace Infostructure.SimpleList.Web.Services
     /// </summary>
     public partial class ApiService : IApiService
     {
+        public int CloneSimpleList(string userName, string password, string simpleListIdOriginal, string simpleListNameNew, string includeDoneSimpleListItems)
+        {
+            return CloneSimpleList(int.Parse(simpleListIdOriginal), simpleListNameNew, bool.Parse(includeDoneSimpleListItems));
+        }
+
         public Models.SimpleListViewModel GetSimpleList(string userName, string password, string simpleListId)
         {
             return GetSimpleList(int.Parse(simpleListId));

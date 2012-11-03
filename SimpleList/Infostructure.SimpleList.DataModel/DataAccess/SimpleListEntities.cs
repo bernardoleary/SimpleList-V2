@@ -8,6 +8,10 @@ namespace Infostructure.SimpleList.DataModel.DataAccess
 {
     public class SimpleListEntities : DbContext
     {
+        public SimpleListEntities() { }
+
+        public SimpleListEntities(string connectionString) : base(connectionString) { }
+
         public DbSet<Models.User> Users
         {
             get;

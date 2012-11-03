@@ -12,6 +12,9 @@
 
     <p>
         <%= Html.ActionLink<SimpleListItemController>(c => c.Create(Model.ID), "Create New Item") %>
+    </p>        
+    <p>
+        <%= Html.ActionLink<SimpleListController>(c => c.Clone(Model.ID), "Clone This List") %>
     </p>
 
     <table>
@@ -47,6 +50,12 @@
     
     <% } %>
 
-    </table>    
+    </table>   
+    
+    <p>
+        <div>
+            <%: Html.ActionLink<SimpleListController>(c => c.Index(), "Back to Lists") %>
+        </div> 
+    </p>
 
 </asp:Content>

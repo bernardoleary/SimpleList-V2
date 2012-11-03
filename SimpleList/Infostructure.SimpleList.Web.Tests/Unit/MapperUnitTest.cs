@@ -1,77 +1,16 @@
 ﻿using Infostructure.SimpleList.Web.Models.Mapping;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting.Web;
 using Infostructure.SimpleList.DataModel.Models;
 using Infostructure.SimpleList.Web.Models;
+using NUnit.Framework;
 
-namespace Infostructure.SimpleList.Web.Tests
+namespace Infostructure.SimpleList.Web.Tests.Unit
 {
-    
-    
-    /// <summary>
-    ///This is a test class for MapperTest and is intended
-    ///to contain all MapperTest Unit Tests
-    ///</summary>
-    [TestClass()]
-    public class MapperTest
+    [TestFixture]
+    public class MapperUnitTest
     {
-
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region Additional test attributes
-        // 
-        //You can use the following additional attributes as you write your tests:
-        //
-        //Use ClassInitialize to run code before running the first test in the class
-        //[ClassInitialize()]
-        //public static void MyClassInitialize(TestContext testContext)
-        //{
-        //}
-        //
-        //Use ClassCleanup to run code after all tests in a class have run
-        //[ClassCleanup()]
-        //public static void MyClassCleanup()
-        //{
-        //}
-        //
-        //Use TestInitialize to run code before running each test
-        //[TestInitialize()]
-        //public void MyTestInitialize()
-        //{
-        //}
-        //
-        //Use TestCleanup to run code after each test has run
-        //[TestCleanup()]
-        //public void MyTestCleanup()
-        //{
-        //}
-        //
-        #endregion
-
-
-        /// <summary>
-        ///A test for SimpleListToSimpleListViewModel
-        ///</summary>
-        [TestMethod()]
+        [Test]
         public void SimpleListToSimpleListViewModelTest()
         {
             Mapper target = new Mapper();
@@ -106,10 +45,7 @@ namespace Infostructure.SimpleList.Web.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        /// <summary>
-        ///A test for SimpleListItemToSimpleListItemViewModel
-        ///</summary>
-        [TestMethod()]
+        [Test]
         public void SimpleListItemToSimpleListItemViewModelTest()
         {
             Mapper target = new Mapper(); // TODO: Initialize to an appropriate value

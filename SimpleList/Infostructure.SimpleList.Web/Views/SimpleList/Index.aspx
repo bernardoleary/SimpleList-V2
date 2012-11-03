@@ -38,7 +38,7 @@
                 <%: item.Name %>
             </td>
             <td>
-                <%: String.Format("{0:d}", item.DateAdded) %>
+                <%: String.Format("{0:dd/MM/yyyy}", item.DateAdded) %>
             </td>
         </tr>
     

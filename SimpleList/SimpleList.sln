@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{
 		UsefulLinks.txt = UsefulLinks.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infostructure.SimpleList.BusinessLogic.Tests", "Infostructure.SimpleList.BusinessLogic.Tests\Infostructure.SimpleList.BusinessLogic.Tests.csproj", "{216F4C84-C15C-43D3-895D-FC45374FD619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infostructure.SimpleList.DataModel.Tests", "Infostructure.SimpleList.DataModel.Tests\Infostructure.SimpleList.DataModel.Tests.csproj", "{594A5A4E-90BB-4689-87D2-A70F530777FF}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -60,6 +64,14 @@ Global
 		{49217339-6618-4D59-AF31-8F57AB3E9A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49217339-6618-4D59-AF31-8F57AB3E9A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49217339-6618-4D59-AF31-8F57AB3E9A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{216F4C84-C15C-43D3-895D-FC45374FD619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{216F4C84-C15C-43D3-895D-FC45374FD619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{216F4C84-C15C-43D3-895D-FC45374FD619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{216F4C84-C15C-43D3-895D-FC45374FD619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{594A5A4E-90BB-4689-87D2-A70F530777FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{594A5A4E-90BB-4689-87D2-A70F530777FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{594A5A4E-90BB-4689-87D2-A70F530777FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{594A5A4E-90BB-4689-87D2-A70F530777FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

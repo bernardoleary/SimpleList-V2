@@ -11,7 +11,17 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
 {
     public class UserRepository
     {
-        private SimpleListEntities _simpleListEntities = new SimpleListEntities();
+        private SimpleListEntities _simpleListEntities = null;
+
+        public UserRepository()
+        {
+            _simpleListEntities = new SimpleListEntities();
+        }
+
+        public UserRepository(SimpleListEntities simpleListEntities)  
+        {
+            this._simpleListEntities = simpleListEntities;
+        }
 
         public User GetUser(string userName, string password)
         {

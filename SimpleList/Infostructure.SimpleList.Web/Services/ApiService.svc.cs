@@ -7,6 +7,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using System.Web;
 using Infostructure.SimpleList.BusinessLogic.Repositories;
+using Infostructure.SimpleList.DataModel.Extensions;
 using Infostructure.SimpleList.DataModel.Models;
 using Infostructure.SimpleList.Web.Models;
 using Infostructure.SimpleList.Web.Models.Mapping;
@@ -59,6 +60,18 @@ namespace Infostructure.SimpleList.Web.Services
             simpleList.DateAdded = DateTime.Now;
             _simpleListRepository = new SimpleListRepository();
             return _simpleListRepository.AddSimpleList(simpleList);
+        }
+
+        public int CloneSimpleList(int simpleListIdOriginal, string simpleListNameNew, bool includeDoneSimpleListItems)
+        {
+            // Authenticate.
+            var user = GetUserCredentials();
+            if (user == null) return 0;
+ 
+            _simpleListRepository = new SimpleListRepository();
+            var simpleListToClone = _simpleListRepository.GetSimpleList(simpleListIdOriginal);
+            var simpleListCloned = simpleListToClone.Clone(includeDoneSimpleListItems, simpleListNameNew);
+            return _simpleListRepository.AddSimpleList(simpleListCloned);
         }
 
         public int CreateSimpleListItem(SimpleListItemViewModel simpleListItemViewModel) 
