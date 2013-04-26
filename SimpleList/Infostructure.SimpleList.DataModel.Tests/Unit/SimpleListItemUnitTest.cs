@@ -14,6 +14,16 @@ namespace Infostructure.SimpleList.DataModel.Tests.Unit
         [Test]
         public void CloneTest()
         {
+            var user = new User
+                           {
+                               ID = 1,
+                               Email = "bernard.oleary@gmail.com",
+                               Name = "Bernard",
+                               Password = "pw",
+                               ShowDoneListItems = false,
+                               ShowDoneLists = false,
+                               SimpleLists = null
+                           };
             var simpleListItem = new Infostructure.SimpleList.DataModel.Models.SimpleListItem
                                                 {
                                                     Description = "test list 1, descr 1",
@@ -21,7 +31,7 @@ namespace Infostructure.SimpleList.DataModel.Tests.Unit
                                                     ID = 1234,
                                                     SimpleListID = 0
                                                 };
-            var clonedSimpleListItem = simpleListItem.Clone();
+            var clonedSimpleListItem = simpleListItem.Clone(user.ID);
             Assert.AreNotEqual(simpleListItem, clonedSimpleListItem);
         }
     }

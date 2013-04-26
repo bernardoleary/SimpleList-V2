@@ -33,7 +33,7 @@ namespace Infostructure.SimpleList.Web.Services
 
             var mapper = new Mapper();
             _simpleListRepository = new SimpleListRepository();
-            return mapper.SimpleListToSimpleListViewModel(_simpleListRepository.GetSimpleList(simpleListId), true);
+            return mapper.SimpleListToSimpleListViewModel(_simpleListRepository.GetSimpleList(user.ID, simpleListId), true);
         }
 
         public IEnumerable<SimpleListViewModel> GetSimpleLists(bool populateSubStructures)
@@ -69,8 +69,8 @@ namespace Infostructure.SimpleList.Web.Services
             if (user == null) return 0;
  
             _simpleListRepository = new SimpleListRepository();
-            var simpleListToClone = _simpleListRepository.GetSimpleList(simpleListIdOriginal);
-            var simpleListCloned = simpleListToClone.Clone(includeDoneSimpleListItems, simpleListNameNew);
+            var simpleListToClone = _simpleListRepository.GetSimpleList(user.ID, simpleListIdOriginal);
+            var simpleListCloned = simpleListToClone.Clone(user.ID, includeDoneSimpleListItems, simpleListNameNew);
             return _simpleListRepository.AddSimpleList(simpleListCloned);
         }
 
@@ -93,7 +93,7 @@ namespace Infostructure.SimpleList.Web.Services
             if (user == null) return 0;
 
             _simpleListItemRepository = new SimpleListItemRepository();
-            return _simpleListItemRepository.DeleteSimpleListItem(simpleListItemId);
+            return _simpleListItemRepository.DeleteSimpleListItem(user.ID, simpleListItemId);
         }
 
         public int DeleteSimpleList(int simpleListId)
@@ -103,7 +103,7 @@ namespace Infostructure.SimpleList.Web.Services
             if (user == null) return 0;
 
             _simpleListRepository = new SimpleListRepository();
-            return _simpleListRepository.DeleteSimpleList(simpleListId);
+            return _simpleListRepository.DeleteSimpleList(user.ID, simpleListId);
         }
 
         public int ToggleDone(int simpleListItemId)
@@ -113,7 +113,7 @@ namespace Infostructure.SimpleList.Web.Services
             if (user == null) return 0;
 
             _simpleListItemRepository = new SimpleListItemRepository();
-            return _simpleListItemRepository.ToggleSimpleListItemDone(simpleListItemId);
+            return _simpleListItemRepository.ToggleSimpleListItemDone(user.ID, simpleListItemId);
         }
 
         /// <summary>

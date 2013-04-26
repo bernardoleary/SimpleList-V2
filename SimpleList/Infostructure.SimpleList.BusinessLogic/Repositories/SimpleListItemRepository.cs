@@ -22,19 +22,21 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             this._simpleListEntities = _simpleListEntities;
         }
 
-        public IEnumerable<SimpleListItem> GetSimpleListItems(int simpleListId)
+        public IEnumerable<SimpleListItem> GetSimpleListItems(int userId, int simpleListId)
         {
             var simpleListItems = from simpleListItem in _simpleListEntities.SimpleListItems
-                                  where simpleListItem.SimpleListID == simpleListId
+                                  join simpleList in _simpleListEntities.SimpleLists on simpleListItem.SimpleListID equals simpleList.ID
+                                  where simpleListItem.SimpleListID == simpleListId && simpleList.UserID == userId
                                   select simpleListItem;
             return simpleListItems;
         }
 
-        public SimpleListItem GetSimpleListItem(int simpleListItemId)
+        public SimpleListItem GetSimpleListItem(int userId, int simpleListItemId)
         {
             var simpleListItemOut = (from simpleListItem in _simpleListEntities.SimpleListItems
-                                  where simpleListItem.ID == simpleListItemId
-                                  select simpleListItem).FirstOrDefault();
+                                     join simpleList in _simpleListEntities.SimpleLists on simpleListItem.SimpleListID equals simpleList.ID
+                                     where simpleListItem.ID == simpleListItemId && simpleList.UserID == userId
+                                     select simpleListItem).FirstOrDefault();
             return simpleListItemOut;
         }
 
@@ -44,25 +46,25 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             return _simpleListEntities.SaveChanges();
         }
 
-        public int DeleteSimpleListItem(int simpleListItemId)
+        public int DeleteSimpleListItem(int userId, int simpleListItemId)
         {
-            var simpleListItem = GetSimpleListItem(simpleListItemId);
+            var simpleListItem = GetSimpleListItem(userId, simpleListItemId);
             _simpleListEntities.SimpleListItems.Remove(simpleListItem);
             return _simpleListEntities.SaveChanges();
         }
 
-        public int UpdateSimpleListItem(SimpleListItem simpleListItem)
+        public int UpdateSimpleListItem(int userId, SimpleListItem simpleListItem)
         {
             var entry = _simpleListEntities.Entry<SimpleListItem>(simpleListItem);
             entry.State = System.Data.EntityState.Modified;
             return _simpleListEntities.SaveChanges();
         }
 
-        public int ToggleSimpleListItemDone(int simpleListItemId)
+        public int ToggleSimpleListItemDone(int userId, int simpleListItemId)
         {
-            var simpleListItem = GetSimpleListItem(simpleListItemId);
+            var simpleListItem = GetSimpleListItem(userId, simpleListItemId);
             simpleListItem.Done = !simpleListItem.Done;
-            return UpdateSimpleListItem(simpleListItem);
+            return UpdateSimpleListItem(userId, simpleListItem);
         }
     }
 }

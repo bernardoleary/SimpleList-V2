@@ -21,7 +21,7 @@ namespace Infostructure.SimpleList.BusinessLogic.Tests.Integration
             var userRespository = new UserRepository(simpleListEntities);
             var user = userRespository.GetUser("bernard");
             var simpleListOriginalFromDb = simpleListRespository.GetSimpleLists(user.ID).FirstOrDefault();
-            var simpleListCloned = simpleListOriginalFromDb.Clone(true, simpleListOriginalFromDb.Name + " - CLONED");
+            var simpleListCloned = simpleListOriginalFromDb.Clone(user.ID, true, simpleListOriginalFromDb.Name + " - CLONED");
             simpleListRespository.AddSimpleList(simpleListCloned);
             var simpleListClonedFromDb =
                 simpleListRespository.GetSimpleLists(user.ID).Where(l => l.Name == simpleListCloned.Name);

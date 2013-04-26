@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Infostructure.SimpleList.DataModel.Extensions;
+using Infostructure.SimpleList.DataModel.Models;
 using NUnit.Framework;
 
 namespace Infostructure.SimpleList.DataModel.Tests.Unit
@@ -11,6 +12,7 @@ namespace Infostructure.SimpleList.DataModel.Tests.Unit
     public class SimpleListUnitTest
     {
         private Infostructure.SimpleList.DataModel.Models.SimpleList _simpleListToTest = null;
+        private Infostructure.SimpleList.DataModel.Models.User _userForTest = null;
 
         [SetUp]
         public void SetUp()
@@ -47,12 +49,22 @@ namespace Infostructure.SimpleList.DataModel.Tests.Unit
                     }
                 }
             };
+            _userForTest = new User
+            {
+                ID = 1,
+                Email = "bernard.oleary@gmail.com",
+                Name = "Bernard",
+                Password = "pw",
+                ShowDoneListItems = false,
+                ShowDoneLists = false,
+                SimpleLists = null
+            };
         }
 
         [Test]
         public void CloneAllTest()
         {
-            Infostructure.SimpleList.DataModel.Models.SimpleList simpleListClonedAll = _simpleListToTest.Clone(true, "cloned list 1");
+            Infostructure.SimpleList.DataModel.Models.SimpleList simpleListClonedAll = _simpleListToTest.Clone(_userForTest.ID, true, "cloned list 1");
             Assert.AreEqual(simpleListClonedAll.SimpleListItems.Count, 3);
             Assert.AreEqual(simpleListClonedAll.Name, "cloned list 1");
         }
@@ -60,7 +72,7 @@ namespace Infostructure.SimpleList.DataModel.Tests.Unit
         [Test]
         public void CloneDoneTest()
         {
-            Infostructure.SimpleList.DataModel.Models.SimpleList simpleListClonedDone = _simpleListToTest.Clone(false, "cloned list 2");
+            Infostructure.SimpleList.DataModel.Models.SimpleList simpleListClonedDone = _simpleListToTest.Clone(_userForTest.ID, false, "cloned list 2");
             Assert.AreEqual(simpleListClonedDone.SimpleListItems.Count, 2);
             Assert.AreEqual(simpleListClonedDone.Name, "cloned list 2");
         }

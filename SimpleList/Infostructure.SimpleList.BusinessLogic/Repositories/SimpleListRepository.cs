@@ -23,10 +23,10 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             this._simpleListEntities = _simpleListEntities;
         }
 
-        public SimpleList.DataModel.Models.SimpleList GetSimpleList(int simpleListId)
+        public SimpleList.DataModel.Models.SimpleList GetSimpleList(int userId, int simpleListId)
         {
             var simpleListOut = (from simpleList in _simpleListEntities.SimpleLists
-                              where simpleList.ID == simpleListId
+                                 where simpleList.ID == simpleListId && simpleList.UserID == userId
                               select simpleList).FirstOrDefault();
             return simpleListOut;
         }
@@ -45,13 +45,13 @@ namespace Infostructure.SimpleList.BusinessLogic.Repositories
             return _simpleListEntities.SaveChanges();
         }
 
-        public int DeleteSimpleList(int simpleListId)
+        public int DeleteSimpleList(int userId, int simpleListId)
         {
             var simpleListItemRepository = new SimpleListItemRepository(_simpleListEntities);
-            var simpleListItems = simpleListItemRepository.GetSimpleListItems(simpleListId);
+            var simpleListItems = simpleListItemRepository.GetSimpleListItems(userId, simpleListId);
             if (simpleListItems.Count() > 0)
                 throw new NonEmptyEntityException(NonEmptyEntityException.GetExceptionMessage(typeof(SimpleList.DataModel.Models.SimpleList), typeof(SimpleListItem)));
-            var simpleList = GetSimpleList(simpleListId);
+            var simpleList = GetSimpleList(userId, simpleListId);
             _simpleListEntities.SimpleLists.Remove(simpleList);
             return _simpleListEntities.SaveChanges();
         }
